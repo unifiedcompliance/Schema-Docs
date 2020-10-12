@@ -95,7 +95,7 @@ The response returned by the ADHierarchy endpoint allows you to build the full h
 		"ad_name": "Sample Organization Name",
 		"category_id": 4,
 		"category_name": "OR",
-		"has_children": null
+		"has_children": 1
 	}
 ]
 ```
