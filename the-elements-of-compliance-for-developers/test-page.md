@@ -67,7 +67,7 @@ The response returned by the ADHierarchy endpoint allows you to build the full h
 		"ad_name": "Sample Category Name",
 		"category_id": 2,
 		"category_name": "CA",
-		"has_children": true
+		"has_children": 1
 	},
 	{
 		"@context": "http://grcschema.org/",
