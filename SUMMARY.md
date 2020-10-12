@@ -37,3 +37,7 @@
   * [§ Organization, Group, and Initiative Schema](2.-schemas/organization-group-and-initiative-schema.md)
   * [§ Authority Document Schema](2.-schemas/authority-document-schema.md)
 
+## The Elements of Compliance for Developers
+
+* [Introduction](the-elements-of-compliance-for-developers/introduction.md)
+
