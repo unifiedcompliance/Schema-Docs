@@ -1,6 +1,6 @@
 # test page
 
-{% api-method method="get" host="https://grcschema.p.rapidapi.com/ADHierarchy" path="" %}
+{% api-method method="get" host="https://grcschema.p.rapidapi.com/ADHierarchy" path="/" %}
 {% api-method-summary %}
 Geographic Hierarchy List
 {% endapi-method-summary %}
@@ -11,11 +11,19 @@ Geographic Hierarchy List
 
 {% api-method-spec %}
 {% api-method-request %}
-{% api-method-path-parameters %}
-{% api-method-parameter name="" type="string" required=false %}
-
+{% api-method-headers %}
+{% api-method-parameter name="useQueryString" type="string" required=true %}
+true
 {% endapi-method-parameter %}
-{% endapi-method-path-parameters %}
+
+{% api-method-parameter name="x-rapidapi-key" type="string" required=true %}
+your API key goes here
+{% endapi-method-parameter %}
+
+{% api-method-parameter name="x-rapidapi-host" type="string" required=true %}
+grcschema.p.rapidapi.com
+{% endapi-method-parameter %}
+{% endapi-method-headers %}
 {% endapi-method-request %}
 
 {% api-method-response %}
@@ -31,4 +39,6 @@ Geographic Hierarchy List
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
