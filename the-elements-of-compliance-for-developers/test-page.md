@@ -6,7 +6,7 @@ Geographic Hierarchy List
 {% endapi-method-summary %}
 
 {% api-method-description %}
-
+This method provides the AD Hiearchy list providing a means to assemble the structure of authority documents and their parent categories.
 {% endapi-method-description %}
 
 {% api-method-spec %}
