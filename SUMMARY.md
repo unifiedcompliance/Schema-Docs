@@ -40,4 +40,5 @@
 ## The Elements of Compliance for Developers
 
 * [Introduction](the-elements-of-compliance-for-developers/introduction.md)
+* [test page](the-elements-of-compliance-for-developers/test-page.md)
 

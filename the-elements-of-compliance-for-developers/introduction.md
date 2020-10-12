@@ -1,6 +1,6 @@
 # Introduction
 
-This portion of the guide is non-normative in that everything we present is presented as a suggested methodology for creating and displaying the various elements of compliance. 
+This portion of the guide is non-normative in that everything we present is as a suggested methodology for creating and displaying the various elements of compliance. 
 
 All APIs for federated mapping are found at RapidAPI.com. These are licensed directly through RapidAPI.com. 
 
