@@ -1,12 +1,14 @@
 # test page
 
+### [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy)
+
 {% api-method method="get" host="https://grcschema.p.rapidapi.com/ADHierarchy" path="/" %}
 {% api-method-summary %}
-Geographic Hierarchy List
+
 {% endapi-method-summary %}
 
 {% api-method-description %}
-This method provides the AD Hiearchy list providing a means to assemble the structure of authority documents and their parent categories.
+This method provides the AD Hiearchy list providing a means to assemble the structure of authority documents and their parent categories.  
 {% endapi-method-description %}
 
 {% api-method-spec %}
