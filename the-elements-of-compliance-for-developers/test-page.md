@@ -1,10 +1,12 @@
 # test page
 
-### [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy)
+### Authority Document Geography Hierarchy List
+
+The Authority Document Geographic hierarchy list's API call is fully documented [HERE](https://short.grcschema.org/ADHierarchy).
 
 {% api-method method="get" host="https://grcschema.p.rapidapi.com/ADHierarchy" path="/" %}
 {% api-method-summary %}
-
+ADHierarchy
 {% endapi-method-summary %}
 
 {% api-method-description %}
