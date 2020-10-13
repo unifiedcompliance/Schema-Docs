@@ -10,10 +10,10 @@ Being a collaborative effort, this library can be found in multiple locations, a
 
 The Authority Document Library utilizes four schemas:
 
-* [AuthorityDocument](https://docs.grcschema.org/2.-schemas/authority-document-schema#2-5-authoritydocument) – defines the documents themselves;
-* [Organization](https://docs.grcschema.org/2.-schemas/organization-group-and-initiative-schema) – defines which organization created the Authority Document \(if no author list is present\), which organizations publish them, and which teams have mapped them;
-* [Person](https://docs.grcschema.org/2.-schemas/2.3a-person-disambiguation#2-2-person) – defines the authors, editors, and mapping team members;
-* [Role](https://docs.grcschema.org/2.-schemas/role-schema#2-3-role) – defines the role each of the people have played in the creation, editing, or mapping of each Authority Document.
+* [AuthorityDocument](https://grcschema.org/AuthorityDocument) – defines the documents themselves;
+* [Organization](https://grcschema.org/Organization) – defines which organization created the Authority Document \(if no author list is present\), which organizations publish them, and which teams have mapped them;
+* [Person](https://grcschema.org/Person) – defines the authors, editors, and mapping team members;
+* [Role](https://grcschema.org/Role) – defines the role each of the people have played in the creation, editing, or mapping of each Authority Document.
 
 The Authority Document Library is searchable three ways:
 
