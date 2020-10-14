@@ -55,13 +55,15 @@ Because the library can be searched three ways, the initial load will need to st
 
 ## Displaying the initial geography and subject matter lists
 
-The API calls to display the _closed_ subject matter list or geography list are as follows:
+The API calls to display the subject matter list or geography list are as follows:
 
-Geography – [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy)
+* Geography – [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy)
+* Subject Matter - [https://short.grcschema.org/ADSubjectMatters](https://short.grcschema.org/ADSubjectMatters)
 
-Subject Matter - [https://short.grcschema.org/ADSubjectMatters](https://short.grcschema.org/ADSubjectMatters)
+Both of these API calls return the complete list of all Authority Documents in their respective hierarchies. The schemas can be found here: 
 
-Both of these API calls returns the _complete list_ of all Authority Documents in their respective hierarchies.
+* Geography – [https://grcschema.org/ADHierarchyStub](https://grcschema.org/ADHierarchyStub)
+* Subject Matter - [https://grcschema.org/ADSubjectMatterStub](https://grcschema.org/ADSubjectMatterStub)
 
 ### Showing documents in the hierarchy
 
