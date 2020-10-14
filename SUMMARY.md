@@ -39,6 +39,6 @@
 
 ## The Elements of Compliance for Developers
 
-* [Introduction](the-elements-of-compliance-for-developers/introduction/README.md)
+* [Element List \(and intro\)](the-elements-of-compliance-for-developers/introduction/README.md)
   * [Authority Document Library](the-elements-of-compliance-for-developers/introduction/authority-document-library.md)
 
