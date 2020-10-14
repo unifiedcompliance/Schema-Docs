@@ -25,7 +25,7 @@ The Authority Document Library is searchable three ways:
 
 Below is a mockup of the Federated Authority Document library. We provide this mockup instead of actual in-use products because each product can be designed slightly different as, again, this is a collaborative effort based on _suggested_ layouts.
 
-![Sample Federated Authority Document Library search window](../../.gitbook/assets/0%20%283%29.png)
+![](../../.gitbook/assets/0%20%283%29.png)
 
 1. Probably the easiest way to find an Authority Document is to type the name and version number into the search field – even a partial name or version number brings up results. You don’t have to worry about getting the name absolutely correct either. Searching for NIST CSF will bring up the correct document, even though that’s not it’s official name.
 2. Or, you can get a list of Authority Documents by their Geography by clicking the Geography button or Subject Matter by clicking _that_ button.
@@ -47,7 +47,7 @@ Initially, the SAVE LIST button will be disabled. It will only be enabled once a
 
 Because the library can be searched three ways, the initial load will need to start with a default, as shown below.
 
-![Initial Load of the search window](../../.gitbook/assets/1.png)
+![](../../.gitbook/assets/1.png)
 
 1. By default, the opening screen should show the GEOGRAPHY hierarchy on the left, with all disclosure triangles closed. The GEOGRAPHY button should be highlighted.
 2. The SAVE LIST button should be disabled until documents have been selected.
@@ -69,9 +69,7 @@ Both of these API calls return the complete list of all Authority Documents in t
 
 This wireframe describes the design specification for searching the federated mapping Authority Document list’s hierarchical display.
 
-![Graphical user interface, text, application
-
-Description automatically generated](../../.gitbook/assets/2.png)
+![](../../.gitbook/assets/2.png)
 
 1. As the hierarchy is disclosed, the leaf nodes, Authority Documents, will display a document icon instead of a disclosure triangle. When displaying the Authority Document, also display an information icon \(i\) and a selector checkbox.
 2. When the user clicks the information icon \(i\), display the Authority Document Reference Card as a modal window.
@@ -81,17 +79,13 @@ Description automatically generated](../../.gitbook/assets/2.png)
 
 This wireframe describes the design specification for displaying hierarchies in the federated mapping Authority Document list.
 
-![Graphical user interface, text, application
-
-Description automatically generated](../../.gitbook/assets/3.png)
+![](../../.gitbook/assets/3.png)
 
 1. Any document that has been selected will be listed in the selected list.
 
 That document will also be displayed in the hierarchical list on the left.
 
-![Graphical user interface, text, application
-
-Description automatically generated](../../.gitbook/assets/4.png)
+![](../../.gitbook/assets/4.png)
 
 1. Switching between geography and subject matter, any document in the selected list will then be displayed, in the correct hierarchical position, in the hierarchical left window.
 
@@ -107,9 +101,7 @@ This is to be designed and displayed as a modal dialog.
 
 The API call for this is found at [https://short.grcschema.org/AuthorityDocument](https://short.grcschema.org/AuthorityDocument). When calling this API call, the Authority Document’s ID needs to be referenced.
 
-![Graphical user interface, text, application
-
-Description automatically generated](../../.gitbook/assets/5.png)
+![](../../.gitbook/assets/5.png)
 
 1. This is core information from https://grcschema.org/AuthorityDocument
 2. This is an array of simplified names found in https://grcschema.org/CommonNames
