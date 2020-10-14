@@ -55,12 +55,12 @@ Because the library can be searched three ways, the initial load will need to st
 
 ## Displaying the initial geography and subject matter lists
 
-The API calls to display the subject matter list or geography list are as follows:
+The **API calls** to display the subject matter list or geography list are as follows:
 
 * Geography – [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy)
 * Subject Matter - [https://short.grcschema.org/ADSubjectMatters](https://short.grcschema.org/ADSubjectMatters)
 
-Both of these API calls return the complete list of all Authority Documents in their respective hierarchies. The schemas can be found here: 
+Both of these API calls return the complete list of all Authority Documents in their respective hierarchies. The **schemas** can be found here: 
 
 * Geography – [https://grcschema.org/ADHierarchyStub](https://grcschema.org/ADHierarchyStub)
 * Subject Matter - [https://grcschema.org/ADSubjectMatterStub](https://grcschema.org/ADSubjectMatterStub)
@@ -99,14 +99,14 @@ This wireframe describes the design specification for displaying the federated i
 
 This is to be designed and displayed as a modal dialog.
 
-The API call for this is found at [https://short.grcschema.org/AuthorityDocument](https://short.grcschema.org/AuthorityDocument). When calling this API call, the Authority Document’s ID needs to be referenced.
+The **API call** for this is found at [https://short.grcschema.org/AuthorityDocument](https://short.grcschema.org/AuthorityDocument). When calling this API call, the Authority Document’s ID needs to be referenced.
 
 ![](../../.gitbook/assets/5.png)
 
-1. This is core information from https://grcschema.org/AuthorityDocument
-2. This is an array of simplified names found in https://grcschema.org/CommonNames
-3. This is an array that can be found in https://grcschema.org/Authors
-4. This is an array that can be found in https://grcschema.org/Editors
-5. This information is specific to each publication location of the document in question. This can be found at https://grcschema.org/ADIdentifiers
-6. This information is specific to each mapping version of the document in question. This can be found at https://grcschema.org/ADMapping.
+1. This is core information from [https://grcschema.org/AuthorityDocument](https://grcschema.org/AuthorityDocument)
+2. This is an array of simplified names found in [https://grcschema.org/CommonNames](https://grcschema.org/CommonNames)
+3. This is an array that can be found in [https://grcschema.org/Authors](https://grcschema.org/Authors)
+4. This is an array that can be found in [https://grcschema.org/Editors](https://grcschema.org/Editors)
+5. This information is specific to each publication location of the document in question. This can be found at [https://grcschema.org/ADIdentifiers](https://grcschema.org/ADIdentifiers)
+6. This information is specific to each mapping version of the document in question. This can be found at [https://grcschema.org/ADMapping](https://grcschema.org/ADMapping).
 
