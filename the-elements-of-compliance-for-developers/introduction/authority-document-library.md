@@ -57,8 +57,8 @@ Because the library can be searched three ways, the initial load will need to st
 
 The **API calls** to display the subject matter list or geography list are as follows:
 
-* Geography – [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy)
-* Subject Matter - [https://short.grcschema.org/ADSubjectMatters](https://short.grcschema.org/ADSubjectMatters)
+* Geography – [https://short.grcschema.org/ADHierarchy](https://short.grcschema.org/ADHierarchy) Geography view should leverage the ADHierarchy List \(GET\) endpoint to provide a nested group view based on the parent\_id in the ADHierarchy List \(GET\) result set.
+* Subject Matter - [https://short.grcschema.org/ADSubjectMatters](https://short.grcschema.org/ADSubjectMatters) Subject Matter view should leverage the SubjectMatters List \(GET\) and ADSubjectMatters List \(GET\) endpoints to provide a nested group view based on the SubjectMattersStub in the ADSubjectMatters List \(GET\) result set.
 
 Both of these API calls return the complete list of all Authority Documents in their respective hierarchies. The **schemas** can be found here: 
 
@@ -72,7 +72,7 @@ This wireframe describes the design specification for searching the federated ma
 ![](../../.gitbook/assets/2.png)
 
 1. As the hierarchy is disclosed, the leaf nodes, Authority Documents, will display a document icon instead of a disclosure triangle. When displaying the Authority Document, also display an information icon \(i\) and a selector checkbox.
-2. When the user clicks the information icon \(i\), display the Authority Document Reference Card as a modal window.
+2. When the user clicks the information icon \(i\), display the Authority Document Reference Card as a modal window. Only items with a category\_id of 1 from either view should display an info button and a checkbox that will add them to the selected list panel on the right, all other items in the result set should be expandable/collapsible in the hierarchical view\(s\).
 3. When the user clicks the selector checkbox, add that Authority Document to the Selected List.
 
 ## Traversing the hierarchies
@@ -97,16 +97,16 @@ Switching back again would display it in its geographical hierarchical position.
 
 This wireframe describes the design specification for displaying the federated individual record information for Authority Documents in the Authority Document list.
 
-This is to be designed and displayed as a modal dialog.
+This is the format of the information that should be displayed in a modal when the info button for an Authority Document is clicked. It should leverage the AuthorityDocument \(GET\) endpoint and should be passed the corresponding ad\_id from the hierarchical view.
 
 The **API call** for this is found at [https://short.grcschema.org/AuthorityDocument](https://short.grcschema.org/AuthorityDocument). When calling this API call, the Authority Document’s ID needs to be referenced.
 
 ![](../../.gitbook/assets/5.png)
 
-1. This is core information from [https://grcschema.org/AuthorityDocument](https://grcschema.org/AuthorityDocument)
-2. This is an array of simplified names found in [https://grcschema.org/CommonNames](https://grcschema.org/CommonNames)
-3. This is an array that can be found in [https://grcschema.org/Authors](https://grcschema.org/Authors)
-4. This is an array that can be found in [https://grcschema.org/Editors](https://grcschema.org/Editors)
-5. This information is specific to each publication location of the document in question. This can be found at [https://grcschema.org/ADIdentifiers](https://grcschema.org/ADIdentifiers)
-6. This information is specific to each mapping version of the document in question. This can be found at [https://grcschema.org/ADMapping](https://grcschema.org/ADMapping).
+1. This is core information from [https://grcschema.org/AuthorityDocument](https://grcschema.org/AuthorityDocument). - **Type** should display the **type** property. - **Pages** should display the **pages** property. - **Date** should display the **effective\_date** property.
+2. This is an array of simplified names found in [https://grcschema.org/CommonNames](https://grcschema.org/CommonNames). The **Common Names** field should display a scrollable list of all name properties in the **CommonNames property**.
+3. This is an array that can be found in [https://grcschema.org/Authors](https://grcschema.org/Authors). - **Authors** should display a scrollable list of all **prefix**, **first\_name**, **middle\_initial**, **last\_name**, and **suffix** properties in the **Authors** property, concatenated with a space between each.
+4. This is an array that can be found in [https://grcschema.org/Editors](https://grcschema.org/Editors). - **Editors** should display a scrollable list of all **prefix**, **first\_name**, **middle\_initial**, **last\_name**, and **suffix** properties in the **Editors** property, concatenated with a space between each.
+5. This Published Version information is specific to each publication location of the document in question. This can be found at [https://grcschema.org/ADIdentifiers](https://grcschema.org/ADIdentifiers). Published Version should be a scrollable list of each item in the **ADIdentifiers** property as described below. - **Type** should display **epub\_type** property. - **Availability** should display the **availability** property. - **Language** should display the **language** property. - **Website Publisher** or **Periodical Title** should display the **website\_publisher** property. - **Volume** or **Issue** should display the **volume\_issue** property. - **Published Date** should display the **published\_date** property. - **ISBN** should display the **isbn** property. - **UUID** should display the **uuid** property. - **Search Info** should display the **search\_information** property. - **URL** should display the **url** property. - **DOI** should display the **doi** property.
+6. This information is specific to each mapping version of the document in question. This can be found at [https://grcschema.org/ADMapping](https://grcschema.org/ADMapping). **Mapped Version** should be a scrollable list of each item in the **ADMapping** property as described below. - **Reference Controls** should display the **reference\_controls** property. - **Release Date** should display the release\_date property. - **Mapper** should display the Team -&gt; Member -&gt; **person\_name** property where the role property is mapper. - \(Mapper\) **Organization** should display the Team -&gt; Member -&gt; **organization** property where the role property is mapper. - **Reviewer** should display the Team -&gt; Member -&gt; **person\_name** property where the role property is reviewer. - \(Reviewer\) **Organization** should display the Team -&gt; Member -&gt; **organization** property where the role property is reviewer. - **Approver** should display the Team -&gt; Member -&gt; **person\_name** property where the role property is approver. - \(Approver\) **Organization** should display the Team -&gt; Member -&gt; **organization** property where the role property is approver. - **URL** should display the **url** property.
 
