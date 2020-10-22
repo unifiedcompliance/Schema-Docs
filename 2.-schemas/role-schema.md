@@ -1,4 +1,4 @@
-# § Role Schema
+# § 2.3 Role Schema
 
 A role is a set of responsibilities defined in a process and assigned to a person or team. In this instance, ISO 19770-8, NISTIR 8278, and the UCF have employed schemas depicting roles for contributors. The UCF’s schema is more advanced than the other two in that it’s particular schema calls for three levels of contributors during the mapping process:
 

@@ -33,9 +33,9 @@
   * [Initial Schema analysis](2.-schemas/2.2-initial-schema-analysis.md)
   * [§ 2.1 Common Schema Elements](2.-schemas/2.3-shared-common-elements.md)
   * [§ 2.2 Person Schema](2.-schemas/2.3a-person-disambiguation.md)
-  * [§ Role Schema](2.-schemas/role-schema.md)
-  * [§ Organization, Group, and Initiative Schema](2.-schemas/organization-group-and-initiative-schema.md)
-  * [§ Authority Document Schema](2.-schemas/authority-document-schema.md)
+  * [§ 2.3 Role Schema](2.-schemas/role-schema.md)
+  * [§ 2.4 Organization, Group, and Initiative Schema](2.-schemas/organization-group-and-initiative-schema.md)
+  * [§ 2.5 Authority Document Schema](2.-schemas/authority-document-schema.md)
 
 ## The Elements of Compliance for Developers
 

@@ -1,4 +1,4 @@
-# § Organization, Group, and Initiative Schema
+# § 2.4 Organization, Group, and Initiative Schema
 
 NISTIR 8278, SWID documentation, and the UCF all have schema identifiers for content contributors as organizations. However, in further research, we have found that there is a slight difference between organizations, groups, and initiatives that have all created content. Here are the working definitions we are using to differentiate between them on this standard:
 

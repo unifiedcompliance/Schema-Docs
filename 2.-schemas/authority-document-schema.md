@@ -1,4 +1,4 @@
-# § Authority Document Schema
+# § 2.5 Authority Document Schema
 
 When we say that we are “complying”, we are saying that we are complying with authoritative rules that are not of our own creation. These authoritative rules can come in the form of regulations, principles, standards, guidelines, best practices, policies, and procedures. Collectively, these are called **Authority Documents** within this schema. For the purposes of this standard, we will refrain from a full discussion, especially since there is a wealth of information about what Authority Documents are that can be found online [HERE](https://short.grcschema.org/OyytRN).
 
