@@ -244,276 +244,276 @@
 
 * Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json POST** to the [https://grcschema.org/Person](https://grcschema.org/Person) endpoint and the full Person object will be returned with the requested changes.
 
-  > Here is an example with Joe.
-  >
-  > ```javascript
-  > {
-  > "@context": "http://grcschema.org/",
-  > "@type": "Person",
-  > "PostalAddress": {
-  >     "@type": "PostalAddress",
-  >     "address1": "123 West Avenue",
-  >     "address2": "Suite 123",
-  >     "city": "Las Vegas",
-  >     "state_territory_province": "Nevada",
-  >     "postal_code": "88901",
-  >     "country": "United States of America",
-  >     "country_code": "USA"
-  > },
-  > "SocialAddresses": {
-  >     "@type": "SocialAddresses",
-  >     "twitter": null,
-  >     "facebook": null,
-  >     "linkedin": null,
-  >     "youtube": null
-  > },
-  > "PersonName": {
-  >     "@type": "PersonName",
-  >     "first_name": "Joe",
-  >     "last_name": "Smith",
-  >     "middle_initial": "E",
-  >     "name_prefix": null,
-  >     "name_suffix": null
-  > },
-  > "CoreMetaData": {
-  >     "@type": "CoreMetaData",
-  >     "date_created": "2020-12-23",
-  >     "date_modified": "2020-12-23",
-  >     "created_by": null,
-  >     "modified_by": null,
-  >     "live_status": null,
-  >     "checksum": 0
-  > },
-  > "PersonMemberships": {
-  >     "@type": "PersonMemberships",
-  >     "PersonOrganizations": {
-  >         "@type": "PersonOrganizations",
-  >         "@set": [
-  >             {
-  >                 "name": null,
-  >                 "id": null,
-  >                 "person_fk": null,
-  >                 "organization_fk": null
-  >             }
-  >         ]
-  >     },
-  >     "PersonGroups": {
-  >         "@type": "PersonGroups",
-  >         "@set": [
-  >             {
-  >                 "name": null,
-  >                 "id": null,
-  >                 "person_fk": null,
-  >                 "group_fk": null
-  >             }
-  >         ]
-  >     },
-  >     "PersonInitiatives": {
-  >         "@type": "PersonInitiatives",
-  >         "@set": [
-  >             {
-  >                 "name": null,
-  >                 "id": null,
-  >                 "person_fk": null,
-  >                 "initiative_fk": null
-  >             }
-  >         ]
-  >     },
-  >     "PersonTeams": {
-  >         "@type": "PersonTeams",
-  >         "@set": [
-  >             {
-  >                 "name": null,
-  >                 "id": null,
-  >                 "person_fk": null,
-  >                 "team_fk": null
-  >             }
-  >         ]
-  >     }
-  > },
-  > "AdditionalNames": {
-  >     "@type": "AdditionalNames",
-  >     "@set": [
-  >         {
-  >             "@type": "AdditionalName",
-  >             "first_name": null,
-  >             "last_name": null,
-  >             "name_prefix": null,
-  >             "name_suffix": null,
-  >             "id": null,
-  >             "person_fk": null,
-  >             "middle_initial": null
-  >         }
-  >     ]
-  > },
-  > "AdditionalEmails": {
-  >     "@type": "AdditionalEmails",
-  >     "@set": [
-  >         {
-  >             "@type": "AdditionalEmail",
-  >             "email": null,
-  >             "id": null,
-  >             "person_fk": null
-  >         }
-  >     ]
-  > },
-  > "AdditionalPostalAddresses": {
-  >     "@type": "AdditionalPostalAddresses",
-  >     "@set": [
-  >         {
-  >             "@type": "AdditionalPostalAddress",
-  >             "address1": null,
-  >             "address2": null,
-  >             "city": null,
-  >             "postal_code": null,
-  >             "country": null,
-  >             "country_code": null,
-  >             "id": null,
-  >             "person_fk": null,
-  >             "state_territory_province": null
-  >         }
-  >     ]
-  > },
-  > "email": "joes-new-email@compliance-noreply.com",
-  > "fullname": "Joe Smith",
-  > "id": 30711
-  > }
-  > ```
-  >
-  > ### Updating Unordered Sets
+> Here is an example with Joe.
+
+```javascript
+{
+    "@context": "http://grcschema.org/",
+    "@type": "Person",
+    "PostalAddress": {
+        "@type": "PostalAddress",
+        "address1": "123 West Avenue",
+        "address2": "Suite 123",
+        "city": "Las Vegas",
+        "state_territory_province": "Nevada",
+        "postal_code": "88901",
+        "country": "United States of America",
+        "country_code": "USA"
+    },
+    "SocialAddresses": {
+        "@type": "SocialAddresses",
+        "twitter": null,
+        "facebook": null,
+        "linkedin": null,
+        "youtube": null
+    },
+    "PersonName": {
+        "@type": "PersonName",
+        "first_name": "Joe",
+        "last_name": "Smith",
+        "middle_initial": "E",
+        "name_prefix": null,
+        "name_suffix": null
+    },
+    "CoreMetaData": {
+        "@type": "CoreMetaData",
+        "date_created": "2020-12-23",
+        "date_modified": "2020-12-23",
+        "created_by": null,
+        "modified_by": null,
+        "live_status": null,
+        "checksum": 0
+    },
+    "PersonMemberships": {
+        "@type": "PersonMemberships",
+        "PersonOrganizations": {
+            "@type": "PersonOrganizations",
+            "@set": [
+                {
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "organization_fk": null
+                }
+            ]
+        },
+        "PersonGroups": {
+            "@type": "PersonGroups",
+            "@set": [
+                {
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "group_fk": null
+                }
+            ]
+        },
+        "PersonInitiatives": {
+            "@type": "PersonInitiatives",
+            "@set": [
+                {
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "initiative_fk": null
+                }
+            ]
+        },
+        "PersonTeams": {
+            "@type": "PersonTeams",
+            "@set": [
+                {
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "team_fk": null
+                }
+            ]
+        }
+    },
+    "AdditionalNames": {
+        "@type": "AdditionalNames",
+        "@set": [
+            {
+                "@type": "AdditionalName",
+                "first_name": null,
+                "last_name": null,
+                "name_prefix": null,
+                "name_suffix": null,
+                "id": null,
+                "person_fk": null,
+                "middle_initial": null
+            }
+        ]
+    },
+    "AdditionalEmails": {
+        "@type": "AdditionalEmails",
+        "@set": [
+            {
+                "@type": "AdditionalEmail",
+                "email": null,
+                "id": null,
+                "person_fk": null
+            }
+        ]
+    },
+    "AdditionalPostalAddresses": {
+        "@type": "AdditionalPostalAddresses",
+        "@set": [
+            {
+                "@type": "AdditionalPostalAddress",
+                "address1": null,
+                "address2": null,
+                "city": null,
+                "postal_code": null,
+                "country": null,
+                "country_code": null,
+                "id": null,
+                "person_fk": null,
+                "state_territory_province": null
+            }
+        ]
+    },
+    "email": "joes-new-email@compliance-noreply.com",
+    "fullname": "Joe Smith",
+    "id": 30711
+}
+```
+
+### Updating Unordered Sets
 
 * Updating \@set objects have **three** special rules.
 * Add a new sub-object by supplying data to any property in any number of objects of \@type while leaving the id and fk parameters **null**.
 * Change a sub-object instance by changing the property \(or properties\) without modifying the id or fk fields.
 * Remove a sub-object instance by removing all the properties except for **\@type** and **id**.
 
-  **Adding a Sub-Object**
+### Adding a Sub-Object
 
-  > This adds three additional AdditionalEmail objects into AdditionalEmails and the full Person object is returned with the id and fk for all sub-objects filled in.
-  >
-  > ```javascript
-  > ...
-  > "AdditionalEmails": {
-  >  "@type": "AdditionalEmails",
-  >  "@set": [
-  >      {
-  >          "@type": "AdditionalEmail",
-  >          "email": "joe@personal-noreply.com",
-  >          "id": null,
-  >          "person_fk": null
-  >      },
-  >      {
-  >          "@type": "AdditionalEmail",
-  >          "email": "jsmith@compliance-noreply.com",
-  >          "id": null,
-  >          "person_fk": null
-  >      },
-  >      {
-  >          "@type": "AdditionalEmail",
-  >          "email": "js@compliance-noreply.com",
-  >          "id": null,
-  >          "person_fk": null
-  >      }
-  >  ]
-  > },
-  > ...
-  > ```
+> This adds three additional AdditionalEmail objects into AdditionalEmails and the full Person object is returned with the id and fk for all sub-objects filled in.
+
+```javascript
+...
+"AdditionalEmails": {
+    "@type": "AdditionalEmails",
+    "@set": [
+        {
+            "@type": "AdditionalEmail",
+            "email": "joe@personal-noreply.com",
+            "id": null,
+            "person_fk": null
+        },
+        {
+            "@type": "AdditionalEmail",
+            "email": "jsmith@compliance-noreply.com",
+            "id": null,
+            "person_fk": null
+        },
+        {
+            "@type": "AdditionalEmail",
+            "email": "js@compliance-noreply.com",
+            "id": null,
+            "person_fk": null
+        }
+    ]
+},
+...
+```
 
 ### Changing a Sub-Object
 
 > In this example, `jsmith@compliance-noreply.com` is changed to `jsmithCHANGED@compliance-noreply.com` and the full Person object is returned with the requested change.
->
-> ```javascript
-> ...
-> "AdditionalEmails": {
->     "@type": "AdditionalEmails",
->     "@set": [
->         {
->             "@type": "AdditionalEmail",
->             "id": 256,
->             "email": "joe@personal-noreply.com",
->             "person_fk": 30711
->         },
->         {
->             "@type": "AdditionalEmail",
->             "id": 257,
->             "email": "jsmithCHANGED@compliance-noreply.com",
->             "person_fk": 30711
->         },
->         {
->             "@type": "AdditionalEmail",
->             "id": 258,
->             "email": "js@compliance-noreply.com",
->             "person_fk": 30711
->         }
->     ]
-> },
-> ...
-> ```
+
+```javascript
+...
+"AdditionalEmails": {
+    "@type": "AdditionalEmails",
+    "@set": [
+        {
+            "@type": "AdditionalEmail",
+            "id": 256,
+            "email": "joe@personal-noreply.com",
+            "person_fk": 30711
+        },
+        {
+            "@type": "AdditionalEmail",
+            "id": 257,
+            "email": "jsmithCHANGED@compliance-noreply.com",
+            "person_fk": 30711
+        },
+        {
+            "@type": "AdditionalEmail",
+            "id": 258,
+            "email": "js@compliance-noreply.com",
+            "person_fk": 30711
+        }
+    ]
+},
+...
+```
 
 ### Removing a Sub-Object
 
 > In this example, the sub-object with `id 258` is deleted by removing the properties and the full Person object is returned with the requested change.
->
-> ```javascript
-> ...
-> "AdditionalEmails": {
->     "@type": "AdditionalEmails",
->     "@set": [
->         {
->             "@type": "AdditionalEmail",
->             "id": 256,
->             "email": "joe@personal-noreply.com",
->             "person_fk": 30711
->         },
->         {
->             "@type": "AdditionalEmail",
->             "id": 257,
->             "email": "jsmith@compliance-noreply.com",
->             "person_fk": 30711
->         },
->         {
->             "@type": "AdditionalEmail",
->             "id": 258
->         }
->     ]
-> },
-> ...
-> ```
->
-> ### Simultaneous Changes
->
+
+```javascript
+...
+"AdditionalEmails": {
+    "@type": "AdditionalEmails",
+    "@set": [
+        {
+            "@type": "AdditionalEmail",
+            "id": 256,
+            "email": "joe@personal-noreply.com",
+            "person_fk": 30711
+        },
+        {
+            "@type": "AdditionalEmail",
+            "id": 257,
+            "email": "jsmith@compliance-noreply.com",
+            "person_fk": 30711
+        },
+        {
+            "@type": "AdditionalEmail",
+            "id": 258
+        }
+    ]
+},
+...
+```
+
+### Simultaneous Changes
+
 > Note it is possible to add, change, and delete all at the same time and in any order and the full Person object is returned with the requested changes.
 >
 > In this example `id 256` is changed, `id 257` is deleted, and a `new record` is added.
->
-> ```javascript
-> ...
-> "AdditionalEmails": {
->     "@type": "AdditionalEmails",
->     "@set": [
->         {
->             "@type": "AdditionalEmail",
->             "id": 256,
->             "email": "joeCHANGE2@personal-noreply.com",
->             "person_fk": 30711
->         },
->         {
->             "@type": "AdditionalEmail",
->             "id": 257
->         },
->         {
->             "@type": "AdditionalEmail",
->             "id": null,
->             "email": "jsmith-NEW@compliance-noreply.com",
->             "person_fk": null
->         }
->     ]
-> },
-> ...
-> ```
->
-> ### Special Note About `name_prefix` and `name_suffix`
->
+
+```javascript
+...
+"AdditionalEmails": {
+    "@type": "AdditionalEmails",
+    "@set": [
+        {
+            "@type": "AdditionalEmail",
+            "id": 256,
+            "email": "joeCHANGE2@personal-noreply.com",
+            "person_fk": 30711
+        },
+        {
+            "@type": "AdditionalEmail",
+            "id": 257
+        },
+        {
+            "@type": "AdditionalEmail",
+            "id": null,
+            "email": "jsmith-NEW@compliance-noreply.com",
+            "person_fk": null
+        }
+    ]
+},
+...
+```
+
+### Special Note About `name_prefix` and `name_suffix`
+
 > These values are integers based on IDs found in the Prefix and Suffix endpoints.
 
