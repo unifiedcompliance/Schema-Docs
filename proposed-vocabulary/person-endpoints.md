@@ -1,18 +1,16 @@
 # index
 
-## PERSON API Operations
-
 > This document explains the methods you may use to work with the PERSON endpoints in the Federated Authority Document database.
 
-### GET Person Endpoints
+## GET Person Endpoints
 
-#### Quick-start Knowledge
+### Quick-start Knowledge
 
 * The full JSON-LD Person object is defined at [https://grcschema.org/Person](https://grcschema.org/Person).
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET**. Optional parameters may be provided to filter and paginate the result.
 * Getting a single Person object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint using a REST **GET**.
 
-#### Get Person
+### Get Person
 
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET** with no optional parameters.
 * Provides a list of all Person objects as stubs.
@@ -26,7 +24,7 @@
 }
 ```
 
-#### Get Person \(filtered\)
+### Get Person \(filtered\)
 
 * Getting a filtered list of Person objects from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/](https://grcschema.p.rapidapi.com/Person/) endpoint using a REST **POST** with url parameters.
 * These are the parameters you can optionally supply to the filter. These fields work as a logical AND.
@@ -41,13 +39,13 @@
 | limit | Combined with offset, provides pagination by limiting results. |
 | offset | Combined with limit, provides pagination by shifting the first record. |
 
-#### Get Person By ID
+### Get Person By ID
 
 * Getting an existing Person object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint using a REST **GET**.
 
-### POST Person Endpoint
+## POST Person Endpoint
 
-#### Quick-start Knowledge
+### Quick-start Knowledge
 
 * Adding a new Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint as a REST **POST**.
 * The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept the the entire object for processing. This includes array items \(\@set\).
@@ -56,7 +54,7 @@
 * When the Person object is created, Social Address information \(facebook, linkedin, etc\) is pulled automatically using Clearbit:tm: if available.
 * A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. \(See the `local_reference_id` section for more detail.\)
 
-#### Minimum Required Object
+### Minimum Required Object
 
 * Only first name, last name, and email are required to create a Person object, however you may supply any other data that complies with the full schema.
 
@@ -73,7 +71,7 @@
 }
 ```
 
-#### Response Object
+### Response Object
 
 * The response object that is returned is the FULL Person JSON object as defined by grcschema.
 * Where an array of objects exists with no records, the **default example object** is returned. This can be determined by the response having an **"id": null** key/value pair. The other parameters for that object will also be null as seen in the following example.
@@ -228,13 +226,13 @@
 }
 ```
 
-#### Special Note About `name_prefix` and `name_suffix`
+### Special Note About `name_prefix` and `name_suffix`
 
 > These values are integers based on IDs found in the Prefix and Suffix endpoints.
 
-### PATCH Person Endpoint
+## PATCH Person Endpoint
 
-#### Quick-start Knowledge
+### Quick-start Knowledge
 
 * Updating a Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint as a REST **POST**.
 * The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept an **existing** Person object \(with applicable changes\) for processing.
@@ -244,7 +242,7 @@
 * Some properties cannot be changed and are ignored.  \(e.g. fullname or any id or fk\)
 * A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing required by some systems. \(See the `local_reference_id` section for more detail.\)
 
-#### Performing a Property \(Key\) Value Update
+### Performing a Property \(Key\) Value Update
 
 * Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json POST** to the [https://grcschema.org/Person](https://grcschema.org/Person) endpoint and the full Person object will be returned with the requested changes.
 * Container objects like PostalAddress, SocialAddresses, and PersonName are part of the core person record and are displayed as objects for data organization purposes only.
@@ -385,14 +383,14 @@
 }
 ```
 
-#### Updating Unordered Sets
+### Updating Unordered Sets
 
 * Updating \@set objects have **three** special rules.
 * Add a new sub-object by supplying data to any property in any number of objects of \@type while leaving the id and fk parameters **null**.
 * Change a sub-object instance by changing the property \(or properties\) without modifying the id or fk fields.
 * Remove a sub-object instance by removing all the properties except for **\@type** and **id**.
 
-#### Adding a Sub-Object
+### Adding a Sub-Object
 
 > This adds three additional AdditionalEmail objects into AdditionalEmails and the full Person object is returned with the id and fk for all sub-objects filled in.
 
@@ -424,7 +422,7 @@
 ...
 ```
 
-#### Changing a Sub-Object
+### Changing a Sub-Object
 
 > In this example, `jsmith@compliance-noreply.com` is changed to `jsmithCHANGED@compliance-noreply.com` and the full Person object is returned with the requested change.
 
@@ -456,7 +454,7 @@
 ...
 ```
 
-#### Removing a Sub-Object
+### Removing a Sub-Object
 
 > In this example, the sub-object with `id 258` is deleted by removing the properties and the full Person object is returned with the requested change.
 
@@ -486,7 +484,7 @@
 ...
 ```
 
-#### Simultaneous Changes
+### Simultaneous Changes
 
 > Note it is possible to add, change, and delete all at the same time and in any order and the full Person object is returned with the requested changes.
 >
@@ -518,18 +516,18 @@
 ...
 ```
 
-#### Special Note About `name_prefix` and `name_suffix`
+### Special Note About `name_prefix` and `name_suffix`
 
 > These values are integers based on IDs found in the Prefix and Suffix endpoints.
 
 ## How to Use `local_reference_id`
 
-#### Quick-start Knowledge
+### Quick-start Knowledge
 
 * For `POST` and `PATCH` operations, you may send an optional `local_reference_id` for the core object and any sub-objects in unordered lists \(\@set arrays\).  This `local_reference_id` will be returned \(like an echo\) for that object.
 * It is recommended you use a Type 4 UUID which is unique for that object in your system and tie the federated ID to your record for later use in querying the federated system for that object.
 
-#### POST Operation Example
+### POST Operation Example
 
 > For the core object, you may place a `local_reference_id` at the object root level, and it will be returned in the response. Do not add `local_reference_id` to the container objects like PersonName. For sub-object, unordered lists \(\@set arrays\), you may place a `local_reference_id` in each object, and it will be returned to you in the response.
 
@@ -598,7 +596,7 @@
 }
 ```
 
-#### PATCH Operation Example
+### PATCH Operation Example
 
 > For the core object, you may place a `local_reference_id` at the object root level, and it will be returned in the response. Do not add `local_reference_id` to the container objects like PersonName.
 
