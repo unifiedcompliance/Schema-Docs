@@ -6,7 +6,7 @@
 
 ## Proposed Vocabulary
 
-* [index](proposed-vocabulary/person-endpoints.md)
+* [Person Endpoints](proposed-vocabulary/person-endpoints.md)
 * [Proposal of a Checksum for RESTful record validation](proposed-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
 
 ## Accepted Vocabulary
