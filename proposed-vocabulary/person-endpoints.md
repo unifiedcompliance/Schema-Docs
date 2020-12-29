@@ -1,4 +1,4 @@
-# Person Endpoints
+# index
 
 > This document explains the methods you may use to work with the PERSON endpoints in the Federated Authority Document database.
 
@@ -26,7 +26,7 @@
 
 ### Get Person \(filtered\)
 
-* Getting a filtered list of Person objects from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/](https://grcschema.p.rapidapi.com/Person/) endpoint using a REST **POST** with url parameters.
+* Getting a filtered list of Person objects from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/](https://grcschema.p.rapidapi.com/Person/) endpoint using a REST **GET** with url parameters.
 * These are the parameters you can optionally supply to the filter. These fields work as a logical AND.
 
 | Field | Description |
