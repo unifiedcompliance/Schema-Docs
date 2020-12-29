@@ -1,4 +1,4 @@
-# index
+# Person Endpoints
 
 > This document explains the methods you may use to work with the PERSON endpoints in the Federated Authority Document database.
 
