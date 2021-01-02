@@ -2,7 +2,7 @@
 
 * [Change Log](README.md)
 * [How we work](how-we-work.md)
-* [2020 Development Cycle](2020-development-cycle.md)
+* [2021 Development Cycle](2020-development-cycle.md)
 
 ## Proposed Vocabulary
 
