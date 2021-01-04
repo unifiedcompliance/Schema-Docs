@@ -35,7 +35,7 @@ In order to build out this data model and ensure that it works through a publicl
 4. Once the schema is locked, API building and testing will be undertaken, with alpha and beta versions of the API made available for testing and discussion.
 5. When the discussion has reached its logical conclusion, the API’s possible versions will be voted on and locked. Once locked it will be made publicly available.
 
-![Steps](https://d1qmdf3vop2l07.cloudfront.net/dear-squash.cloudvent.net/compressed/_min_/7e986ca26895da60482100920eca3e32.png)\*\*\*\*
+![Steps](https://d1qmdf3vop2l07.cloudfront.net/dear-squash.cloudvent.net/compressed/_min_/7e986ca26895da60482100920eca3e32.png)
 
 This can be accomplished in a stair-step manner wherein we build out the schema and APIs from their logical progression as listed in the contribution scenario above. Once a schema has been voted on and locked, the next schema in the logical progression can be proposed.
 
