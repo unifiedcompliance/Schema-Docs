@@ -2,7 +2,7 @@
 
 The core data model for a federated compliance mapping schema is shown below:
 
-![Core data model for a federated mapping schema](../.gitbook/assets/0%20%281%29.png)
+![Core data model for a federated mapping schema](../.gitbook/assets/0%20%281%29%20%281%29.png)
 
 The process of mapping follows these steps:
 

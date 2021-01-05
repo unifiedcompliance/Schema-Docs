@@ -6,7 +6,7 @@ The purpose of this document is to describe the schema and mapping methodology f
 
 ![A close up of a sign
 
-Description automatically generated](../../.gitbook/assets/0.png)
+Description automatically generated](../../.gitbook/assets/0%20%281%29.png)
 
 The process of mapping follows these steps:
 

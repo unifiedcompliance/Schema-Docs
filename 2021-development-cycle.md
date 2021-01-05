@@ -1,6 +1,6 @@
 # 2021 Development Cycle
 
-Following the content guidance from the various Authority Documents[1](), contribution through a centralized API roughly follows the data model shown below:
+Following the content guidance from the various Authority Documents[1](2021-development-cycle.md), contribution through a centralized API roughly follows the data model shown below:
 
 ![](.gitbook/assets/federated-mapping%20%281%29.png)
 

@@ -25,7 +25,7 @@ The Authority Document Library is searchable three ways:
 
 Below is a mockup of the Federated Authority Document library. We provide this mockup instead of actual in-use products because each product can be designed slightly different as, again, this is a collaborative effort based on _suggested_ layouts.
 
-![](../../.gitbook/assets/0%20%283%29.png)
+![](../../.gitbook/assets/0%20%282%29.png)
 
 1. Probably the easiest way to find an Authority Document is to type the name and version number into the search field – even a partial name or version number brings up results. You don’t have to worry about getting the name absolutely correct either. Searching for NIST CSF will bring up the correct document, even though that’s not it’s official name.
 2. Or, you can get a list of Authority Documents by their Geography by clicking the Geography button or Subject Matter by clicking _that_ button.

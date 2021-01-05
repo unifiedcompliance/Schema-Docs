@@ -6,6 +6,7 @@
 
 ## Proposed Vocabulary
 
+* [Universal Stub Thing](proposed-vocabulary/universal-stub-thing.md)
 * [Person Endpoints](proposed-vocabulary/person-endpoints.md)
 * [Proposal of a Checksum for RESTful record validation](proposed-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
 
