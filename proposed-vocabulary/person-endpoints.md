@@ -234,7 +234,7 @@
 
 ### Quick-start Knowledge
 
-* Updating a Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint as a REST **POST**.
+* Updating a Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint as a REST **PATCH**.
 * The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept an **existing** Person object \(with applicable changes\) for processing.
 * Duplicate email addresses are not allowed in the Person's data or in the system as whole.
 * When updating any object or sub-object, ID and FK fields cannot be changed.
@@ -244,7 +244,7 @@
 
 ### Performing a Property \(Key\) Value Update
 
-* Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json POST** to the [https://grcschema.org/Person](https://grcschema.org/Person) endpoint and the full Person object will be returned with the requested changes.
+* Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json PATCH** to the [https://grcschema.org/Person/:id](https://grcschema.org/Person/:id) endpoint and the full Person object will be returned with the requested changes.
 * Container objects like PostalAddress, SocialAddresses, and PersonName are part of the core person record and are displayed as objects for data organization purposes only.
 
 > Here is an example with Joe.
@@ -612,7 +612,7 @@
 ```
 
 > For sub-object, unordered lists \(\@set arrays\), you may place a `local_reference_id` in each object, and it will be returned to you in the response.  
-> Note: When a `local_reference_id` is used during delete operation, the object will be returned with no properties but with your `local_reference_id` denoting the object was deleted.
+> Note: When a `local_reference_id` is used during delete operation, the object will be returned with no properties but with your `local_reference_id` denoting the object was deleted. If you do not require a returned object denoting the deletion, do not send the `local_reference_id` key and value.
 
 **SEND**
 
