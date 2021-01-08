@@ -176,7 +176,7 @@ Establishing any data format for an API is a common problem – especially when 
 
 An example of the bound, unambiguous context is shown below that uses IRIs \(Internationalized Resource Identifiers as described in RFC3987\) for unambiguous identification. The idea is to use IRIs to assign unambiguous identifiers to data that may be of use to other developers:
 
-{ "@context":{ "schema": "[http://grcschema.org/](http://grcschema.org/)", "rdf": "[http://www.w3.org/1999/02/22-rdf-syntax-ns\#](http://www.w3.org/1999/02/22-rdf-syntax-ns#)", "rdfa": "[http://www.w3.org/ns/rdfa\#](http://www.w3.org/ns/rdfa#)", "rdfs": "[http://www.w3.org/2000/01/rdf-schema\#](http://www.w3.org/2000/01/rdf-schema#)" }, "@id": "Thing", "@type": "schema:Thing", "rdfs:comment": "The most generic type of item.", "rdfs:label": "Thing" } 
+`{ "@context":{ "schema": "`[`http://grcschema.org/`](http://grcschema.org/)`", "rdf": "`[`http://www.w3.org/1999/02/22-rdf-syntax-ns#`](http://www.w3.org/1999/02/22-rdf-syntax-ns#)`", "rdfa": "`[`http://www.w3.org/ns/rdfa#`](http://www.w3.org/ns/rdfa#)`", "rdfs": "`[`http://www.w3.org/2000/01/rdf-schema#`](http://www.w3.org/2000/01/rdf-schema#)`" }, "@id": "Thing", "@type": "schema:Thing", "rdfs:comment": "The most generic type of item.", "rdfs:label": "Thing" }` 
 
 `1.2.9 Each JSON object will be placed in a hierarchy with a single top-level object (type) with cascading, subordinate objects (types) as necessary.`
 
@@ -234,20 +234,20 @@ Verhoeff \( numericString ; index ; checkSum \)
 
 #### Calculation
 
-Let \( \[    
-n = Right \( numericString ; 1 \) ;   
-p = Let \( \[   
-array =  "01234567891576283094580379614289160435279453126870428657390127938064157046913258" ;    
-start = 10 \* _Mod \( index ; 8 \) + n + 1 \] ;   
-Middle \( array ; start ; 1 \)  \) ;   
-d = Let \( \[   
-array = "0123456789123406789523401789563401289567401239567859876043216598710432765982104387659321049876543210" ;   
-start = 10_  \* checkSum + p + 1 \] ;   
-Middle \( array ; start ; 1 \) \) ;    
-len = Length \( numericString \) ;   
-nextString = Left \( numericString ; len - 1 \)  \] ;   
-Case \( len &gt; 1 ; Verhoeff \( nextString ; index + 1 ; d \) ; d \)  
- \) 
+_Let \( \[    
+          n = Right \( numericString ; 1 \) ;   
+          p = Let \( \[   
+          array =                 "01234567891576283094580379614289160435279453126870428657390127938064157046913258" ;    
+          start = 10 \* Mod \( index ; 8 \) + n + 1 \] ;   
+                       Middle \( array ; start ; 1 \)  \) ;   
+          d = Let \( \[   
+          array = "0123456789123406789523401789563401289567401239567859876043216598710432765982104387659321049876543210" ;   
+          start = 10  \* checkSum + p + 1 \] ;   
+                       Middle \( array ; start ; 1 \) \) ;    
+          len = Length \( numericString \) ;   
+          nextString = Left \( numericString ; len - 1 \)  \] ;   
+          Case \( len &gt; 1 ; Verhoeff \( nextString ; index + 1 ; d \) ; d \)  
+ \)_ 
 
 `1.2.11.g Core meta data will include a Verhoeff checksum (checksum) that is a positive integer.`
 
@@ -255,28 +255,41 @@ Case \( len &gt; 1 ; Verhoeff \( nextString ; index + 1 ; d \) ; d \)
 
 An example of a nested table with its id as well as the id of the related table is shown below. 
 
-{   
-  "@context":  
-    { "schema": "[http://grcschema.org/](http://grcschema.org/)",  
-       "rdf": "[http://www.w3.org/1999/02/22-rdf-syntax-ns\#](http://www.w3.org/1999/02/22-rdf-syntax-ns#)",  
-       "rdfa": "[http://www.w3.org/ns/rdfa\#](http://www.w3.org/ns/rdfa#)",  
-       "rdfs": "[http://www.w3.org/2000/01/rdf-schema\#](http://www.w3.org/2000/01/rdf-schema#)"  
-     },  
-  "id": "96",  
-  "@type": "Person",  
-  "name": "Barack Obama",  
-  "givenName": "Barack",  
-  "familyName": "Obama",  
-  "jobTitle": "44th President of the United States",  
-  "spouse":  
-    { "id": "13133",  
-      "@type": "Person",  
-      "name": "Michelle Obama",  
-      "Person\_fk": "96"  
-     }  
-  } 
+_{ "@context":  
+                        { "schema": "_[_http://grcschema.org/_](http://grcschema.org/)_",  
+                        "rdf": "_[_http://www.w3.org/1999/02/22-rdf-syntax-ns\#_](http://www.w3.org/1999/02/22-rdf-syntax-ns#)_",  
+                        "rdfa": "_[_http://www.w3.org/ns/rdfa\#_](http://www.w3.org/ns/rdfa#)_",   
+                        "rdfs": "_[_http://www.w3.org/2000/01/rdf-schema\#_](http://www.w3.org/2000/01/rdf-schema#)_"   
+                        },   
+"id": "96",   
+"@type": "Person",   
+"name": "Barack Obama",   
+"givenName": "Barack",   
+"familyName": "Obama",   
+"jobTitle": "44th President of the United States",   
+"spouse":   
+                        { "id": "13133",   
+                        "@type": "Person",   
+                        "name": "Michelle Obama",   
+                        "Person\_fk": "96"   
+                        }   
+}_
 
-`1.2.13 When using a property intended to reference another entity or external reference, those properties will be represented as full URLs.`
+`§ 1.2.13 When using a property intended to reference another entity or external reference, those properties will be represented as full URLs.`
+
+### Specification of Arrays
+
+Arrays are specified by the keyword @set followed by JSON’s array brackets “\[ \]”. The objects that follow denote the individual objects \(fields\) within the array. 
+
+_"@set": \[  
+        { "@type": "NonStandardName",   
+         "name": "String",  
+        "id": "Integer",  
+        "organization\_fk": "Integer"  
+        }  
+         \]_
+
+`§ 1.2.14 When including arrays within objects, the @set will precede the array brackets “[ ]”.`
 
 ### Specification of Types
 
@@ -286,27 +299,27 @@ The @type keyword is used to set the type of a node or the datatype of a typed v
 
 An example of this is shown below: 
 
-"@context":"[http://grcschema.org/](http://grcschema.org/)"   
+"@context":"[http://grcschema.org/](http://grcschema.org/)" ,  
 "@type":"Role" 
 
 `1.2.16 When @type follows an object name and isn’t preceding an array it names a predefined group of fields.` 
 
 Example below: 
 
-"coreMetaData":   
+_"coreMetaData":   
   {  
   "@type": "CoreMetaData"  
   "date\_created":"2014-10-05"  
   "date\_modified":"2014-10-05"  
   "live\_status":1  
   "table":"Language"  
-  } 
+  }_ 
 
 `1.2.17 When @type follows an object name and precedes an array it names the related table that should be added.` 
 
 Example below: 
 
-"nonStandardNames":  
+_"nonStandardNames":  
   {  
   "@type":"NonStandardNames"  
   "Names":  
@@ -317,27 +330,27 @@ Example below:
       "name":"افغانستان"  
       }  
     \]  
-  }
+  }_
 
 Here is an example where you’ve got @type meaning all of the above.
 
-"geoLocation":  
+_"geoLocation":  
   {  
-  "@type":"GeoLocation" _&lt;- That describes this grouping of data_  
+  "@type":"GeoLocation" &lt;- That describes this grouping of data  
   "borders":  
     {  
-    "@type":"Borders" _&lt;— That describes the related subtable and fields_  
+    "@type":"Borders" &lt;— That describes the related subtable and fields  
     "border":  
       \[...\]  
     }  
   "term":  
     {  
-    "@type":"Term" _&lt;- That just describes a field from a related table_  
+    "@type":"Term" &lt;- That just describes a field from a related table  
     "term.id":32131  
     }  
   "callingCodes":  
     {  
-    "@type":"CallingCodes" _&lt;— That describes the related subtable and fields_  
+    "@type":"CallingCodes" &lt;— That describes the related subtable and fields  
     "calling\_codes":  
       \[  
       0:  
@@ -349,5 +362,65 @@ Here is an example where you’ve got @type meaning all of the above.
        }  
       "latitude":"33"  
       "longitude":"65"  
-    }
+    }_
+
+### Local Reference Identifiers
+
+When creating new records \(POST\), or updating existing records \(PATCH\), an additional level of validation and non-repudiation is presented as an optional key-value pair. We suggest using a hash-based algorithm such as an md5 hash based on the contents of the fields being passed to the API for creation or updating, such as the one below:
+
+local\_reference\_id": "81dc9bdb52d04dc20036dbd8313ed055"
+
+`§ 1.2.19 For POST and PATCH operations, you may send an optional local_reference_id for the core object and any sub-objects in unordered lists (\@set arrays). This lo-cal_reference_id will be returned (like an echo) for that object.`
+
+`§ 1.2.20 It is recommended you use a Type 4 UUID which is unique for that object in your sys-tem and tie the federated ID to your record for later use in querying the federated system for that object.`
+
+#### POST Operation Example
+
+For the core object, you may place a local\_reference\_id at the object root level, and it will be re-turned in the response.
+
+**SEND**
+
+_{  
+   "@context": "_[_http://grcschema.org/_](http://grcschema.org/)_",   
+   "@type": "NameSuffix",   
+   "abbreviation": "Adm",   
+   "local\_reference\_id": "81dc9bdb52d04dc20036dbd8313ed055",   
+   "suffix": "Admiral"   
+}_
+
+**RESPONSE**
+
+_{   
+   "@context":"_[_http://grcschema.org/_](http://grcschema.org/)_",   
+   "@type": "NameSuffix",   
+   "abbreviation": "Adm",   
+   "id": 2,   
+   "suffix": "Admiral",   
+   "local\_reference\_id": "81dc9bdb52d04dc20036dbd8313ed055"   
+}_
+
+**PATCH Operation Example**
+
+For the core object, you may place a local\_reference\_id at the object root level, and it will be returned in the response. Do not add local\_reference\_id to the container objects like CoreMetaDa-ta.
+
+**SEND & RESPONSE**
+
+_{   
+   "@context":"_[_http://grcschema.org/_](http://grcschema.org/)_",   
+   "@type": "NameSuffix",   
+   "CoreMetaData": {   
+                                    "@type": "CoreMetaData",   
+                                   "date\_created": "Date",   
+                                   "date\_modified": "Date",   
+                                   "created\_by": "Integer",   
+                                   "modified\_by": "Integer",   
+                                   "live\_status": "Boolean",   
+                                   "checksum": "Integer",   
+                                   "validated": "Boolean"   
+                                   },   
+   "abbreviation": "Adm.",   
+   "id": 2,   
+   "suffix": "Admiral",   
+   "local\_reference\_id": "81dc9bdb52d04dc20036dbd8313ed055"   
+}_
 
