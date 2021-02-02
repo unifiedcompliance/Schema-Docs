@@ -76,9 +76,15 @@
 * Adding a new Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint as a REST **POST**.
 * The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept the the entire object for processing. This includes array items (@set).
 * Duplicate email addresses are not allowed in the Person's data or in the system as whole.
+* All new objects require a person id performing the update which is accomplished via the `x-requester-person` header value.
 * When posting an object, all ID fields are ignored and can be set to **null**. Any parameter (key) or sub-object not provided is considered **null**.
 * When the Person object is created, Social Address information (facebook, linkedin, etc) is pulled automatically using Clearbit:tm: if available.
 * A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. (See the `local_reference_id` section for more detail.)
+
+### Created_by Audit Record and Person 0
+* When you send a POST to create a Person object, you must supply an `x-requester-person` with a person id (the person making the request). This sets the created_by field in the audit record to the person who added the object.
+* In the case where a Person (as a user of your application) is adding themselves, `x-requester-person` may be set to 0 for the POST.  This will create the Person and assign the change to the newly created Person.
+
 
 ### Minimum Required Object
 
