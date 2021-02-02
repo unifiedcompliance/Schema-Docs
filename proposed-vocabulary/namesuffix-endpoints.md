@@ -39,7 +39,9 @@
         "date_modified": "0000-00-00 00:00:00",
         "created_by": null,
         "modified_by": null,
-        "live_status": 0
+        "live_status": 0,
+        "checksum": null,
+        "validated": 1
       },
       "abbreviation": "II",
       "id": 1,
@@ -54,7 +56,9 @@
         "date_modified": "0000-00-00 00:00:00",
         "created_by": null,
         "modified_by": null,
-        "live_status": 0
+        "live_status": 0,
+        "checksum": null,
+        "validated": 1
       },
       "abbreviation": "III",
       "id": 2,
