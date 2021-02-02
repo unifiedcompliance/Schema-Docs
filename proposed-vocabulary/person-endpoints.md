@@ -82,18 +82,34 @@
 
 ### Minimum Required Object
 
-* Only first name, last name, and email are required to create a Person object, however you may supply any other data that complies with the full schema.
+* Only one primary name (first name, last name) and one primary email are required to create a Person object, however you may supply any other data that complies with the full schema object.
 
 ```javascript
 {
-    "@context": "http://grcschema.org/",
-    "@type": "Person",
-    "PersonName": {
-        "@type": "PersonName",
-        "first_name": "Joe",
-        "last_name": "Smith"
-    },
-    "email": "joe@compliance-noreply.com"
+  "@context": "https://grcschema.org",
+  "@type": "Person",
+  "Emails": {
+    "@type": "Emails",
+    "@set": [
+      {
+        "@type": "Email",
+        "email": "jsmith@no-reply.org",
+        "primary": 1
+      }
+    ]
+  },
+  "Names": {
+    "@type": "Names",
+    "@set": [
+      {
+        "@type": "Name",
+        "first_name": "John",
+        "last_name": "Smith",
+        "primary": 1
+      }
+    ]
+  },
+  "id": null
 }
 ```
 
@@ -103,34 +119,80 @@
 * Where an array of objects exists with no records, the **default example object** is returned. This can be determined by the response having an **"id": null** key/value pair. The other parameters for that object will also be null as seen in the following example.
 
 ```javascript
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"PostalAddresses": {
+    "@type": "PostalAddresses",
     "@set": [
         {
-            "@type": "AdditionalEmail",
-            "email": null,
+            "primary": null,
+            "@type": "PostalAddress",
+            "address1": null,
+            "address2": null,
+            "city": null,
+            "postal_code": null,
+            "country": null,
             "id": null,
-            "person_fk": null
+            "country_code": null,
+            "person_fk": null,
+            "organization_fk": null,
+            "state_territory_province": null,
+            "local_reference_id": null
         }
     ]
 }
 ```
 
-* This is the full JSON object for the Joe Smith example above. Please note how the arrays have "example" sub-objects. These are provided for easier understanding of the overall object structure and allows the full object to be further modified through the patch endpoint.
+* This is the full JSON object for the John Smith example above. Please note how the arrays have "example" sub-objects. These are provided for easier understanding of the overall object structure and allows the full object to be further modified through the patch endpoint.
 
 ```javascript
 {
     "@context": "http://grcschema.org/",
     "@type": "Person",
-    "PostalAddress": {
-        "@type": "PostalAddress",
-        "address1": null,
-        "address2": null,
-        "city": null,
-        "state_territory_province": null,
-        "postal_code": null,
-        "country": null,
-        "country_code": null
+    "PhoneNumbers": {
+        "@type": "PhoneNumbers",
+        "@set": [
+            {
+                "@type": "PhoneNumber",
+                "id": null,
+                "phone_number": null,
+                "person_fk": null,
+                "organization_fk": null,
+                "local_reference_id": null,
+                "primary": null
+            }
+        ]
+    },
+    "PersonRoles": {
+        "@type": "PersonRoles",
+        "@set": [
+            {
+                "@type": "PersonRole",
+                "name": null,
+                "id": null,
+                "role_fk": null,
+                "person_fk": null,
+                "local_reference_id": null
+            }
+        ]
+    },
+    "PostalAddresses": {
+        "@type": "PostalAddresses",
+        "@set": [
+            {
+                "primary": null,
+                "@type": "PostalAddress",
+                "address1": null,
+                "address2": null,
+                "city": null,
+                "postal_code": null,
+                "country": null,
+                "id": null,
+                "country_code": null,
+                "person_fk": null,
+                "organization_fk": null,
+                "state_territory_province": null,
+                "local_reference_id": null
+            }
+        ]
     },
     "SocialAddresses": {
         "@type": "SocialAddresses",
@@ -139,22 +201,15 @@
         "linkedin": null,
         "youtube": null
     },
-    "PersonName": {
-        "@type": "PersonName",
-        "first_name": "Joe",
-        "last_name": "Smith",
-        "middle_initial": null,
-        "name_prefix": null,
-        "name_suffix": null
-    },
     "CoreMetaData": {
         "@type": "CoreMetaData",
-        "date_created": "2020-12-23",
-        "date_modified": "2020-12-23",
-        "created_by": null,
-        "modified_by": null,
+        "date_created": "2021-02-02",
+        "date_modified": "2021-02-02",
+        "created_audit_id": 74,
+        "modified_audit_id": null,
         "live_status": null,
-        "checksum": 0
+        "checksum": 0,
+        "validated": 0
     },
     "PersonMemberships": {
         "@type": "PersonMemberships",
@@ -162,6 +217,7 @@
             "@type": "PersonOrganizations",
             "@set": [
                 {
+                    "@type": "PersonOrganization",
                     "name": null,
                     "id": null,
                     "person_fk": null,
@@ -173,6 +229,7 @@
             "@type": "PersonGroups",
             "@set": [
                 {
+                    "@type": "PersonGroup",
                     "name": null,
                     "id": null,
                     "person_fk": null,
@@ -184,10 +241,11 @@
             "@type": "PersonInitiatives",
             "@set": [
                 {
+                    "@type": "PersonInitiative",
                     "name": null,
                     "id": null,
                     "person_fk": null,
-                    "initiative_fk": null
+                    "initiative": null
                 }
             ]
         },
@@ -195,6 +253,7 @@
             "@type": "PersonTeams",
             "@set": [
                 {
+                    "@type": "PersonTeam",
                     "name": null,
                     "id": null,
                     "person_fk": null,
@@ -203,52 +262,40 @@
             ]
         }
     },
-    "AdditionalNames": {
-        "@type": "AdditionalNames",
+    "Emails": {
+        "@type": "Emails",
         "@set": [
             {
-                "@type": "AdditionalName",
-                "first_name": null,
-                "last_name": null,
-                "name_prefix": null,
-                "name_suffix": null,
-                "id": null,
-                "person_fk": null,
-                "middle_initial": null
+                "@type": "Email",
+                "id": 501,
+                "email": "jsmith@no-reply.org",
+                "person_fk": 30825,
+                "organization_fk": null,
+                "primary": 1,
+                "local_reference_id": null
             }
         ]
     },
-    "AdditionalEmails": {
-        "@type": "AdditionalEmails",
+    "Names": {
+        "@type": "Names",
         "@set": [
             {
-                "@type": "AdditionalEmail",
-                "email": null,
-                "id": null,
-                "person_fk": null
+                "@type": "Name",
+                "id": 650,
+                "first_name": "John",
+                "last_name": "Smith",
+                "name_prefix_fk": null,
+                "name_suffix_fk": null,
+                "person_fk": 30825,
+                "middle_initial": null,
+                "primary": 1,
+                "local_reference_id": null
             }
         ]
     },
-    "AdditionalPostalAddresses": {
-        "@type": "AdditionalPostalAddresses",
-        "@set": [
-            {
-                "@type": "AdditionalPostalAddress",
-                "address1": null,
-                "address2": null,
-                "city": null,
-                "postal_code": null,
-                "country": null,
-                "country_code": null,
-                "id": null,
-                "person_fk": null,
-                "state_territory_province": null
-            }
-        ]
-    },
-    "email": "joe@compliance-noreply.com",
-    "fullname": "Joe Smith",
-    "id": 30711
+    "email": "jsmith@no-reply.org",
+    "fullname": "John Smith",
+    "id": 30825
 }
 ```
 
@@ -273,21 +320,58 @@
 * Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json PATCH** to the [https://grcschema.org/Person/:id](https://grcschema.org/Person/:id) endpoint and the full Person object will be returned with the requested changes.
 * Container objects like PostalAddress, SocialAddresses, and PersonName are part of the core person record and are displayed as objects for data organization purposes only.
 
-> Here is an example with Joe.
+> Here is an example with Joe - adding a telephone, a role, and an address.
 
 ```javascript
 {
     "@context": "http://grcschema.org/",
     "@type": "Person",
-    "PostalAddress": {
-        "@type": "PostalAddress",
-        "address1": "123 West Avenue",
-        "address2": "Suite 123",
-        "city": "Las Vegas",
-        "state_territory_province": "Nevada",
-        "postal_code": "88901",
-        "country": "United States of America",
-        "country_code": "USA"
+    "PhoneNumbers": {
+        "@type": "PhoneNumbers",
+        "@set": [
+            {
+                "@type": "PhoneNumber",
+                "id": null,
+                "phone_number": "623-555-1212",
+                "person_fk": null,
+                "organization_fk": null,
+                "local_reference_id": "telephone1",
+                "primary": 1
+            }
+        ]
+    },
+    "PersonRoles": {
+        "@type": "PersonRoles",
+        "@set": [
+            {
+                "@type": "PersonRole",
+                "name": null,
+                "id": null,
+                "role_fk": 245,
+                "person_fk": null,
+                "local_reference_id": "role1"
+            }
+        ]
+    },
+    "PostalAddresses": {
+        "@type": "PostalAddresses",
+        "@set": [
+            {
+                "primary": 1,
+                "@type": "PostalAddress",
+                "address1": "123 West East Street",
+                "address2": "Suite 100",
+                "city": "Phoenix",
+                "postal_code": "85028",
+                "country": "United States of America",
+                "id": null,
+                "country_code": "USA",
+                "person_fk": null,
+                "organization_fk": null,
+                "state_territory_province": "Arizona",
+                "local_reference_id": "postal1"
+            }
+        ]
     },
     "SocialAddresses": {
         "@type": "SocialAddresses",
@@ -296,22 +380,15 @@
         "linkedin": null,
         "youtube": null
     },
-    "PersonName": {
-        "@type": "PersonName",
-        "first_name": "Joe",
-        "last_name": "Smith",
-        "middle_initial": "E",
-        "name_prefix": null,
-        "name_suffix": null
-    },
     "CoreMetaData": {
         "@type": "CoreMetaData",
-        "date_created": "2020-12-23",
-        "date_modified": "2020-12-23",
-        "created_by": null,
-        "modified_by": null,
+        "date_created": "2021-02-02",
+        "date_modified": "2021-02-02",
+        "created_audit_id": 74,
+        "modified_audit_id": null,
         "live_status": null,
-        "checksum": 0
+        "checksum": 0,
+        "validated": 0
     },
     "PersonMemberships": {
         "@type": "PersonMemberships",
@@ -319,6 +396,7 @@
             "@type": "PersonOrganizations",
             "@set": [
                 {
+                    "@type": "PersonOrganization",
                     "name": null,
                     "id": null,
                     "person_fk": null,
@@ -330,6 +408,7 @@
             "@type": "PersonGroups",
             "@set": [
                 {
+                    "@type": "PersonGroup",
                     "name": null,
                     "id": null,
                     "person_fk": null,
@@ -341,10 +420,11 @@
             "@type": "PersonInitiatives",
             "@set": [
                 {
+                    "@type": "PersonInitiative",
                     "name": null,
                     "id": null,
                     "person_fk": null,
-                    "initiative_fk": null
+                    "initiative": null
                 }
             ]
         },
@@ -352,6 +432,7 @@
             "@type": "PersonTeams",
             "@set": [
                 {
+                    "@type": "PersonTeam",
                     "name": null,
                     "id": null,
                     "person_fk": null,
@@ -360,52 +441,40 @@
             ]
         }
     },
-    "AdditionalNames": {
-        "@type": "AdditionalNames",
+    "Emails": {
+        "@type": "Emails",
         "@set": [
             {
-                "@type": "AdditionalName",
-                "first_name": null,
-                "last_name": null,
-                "name_prefix": null,
-                "name_suffix": null,
-                "id": null,
-                "person_fk": null,
-                "middle_initial": null
+                "@type": "Email",
+                "id": 501,
+                "email": "jsmith@no-reply.org",
+                "person_fk": 30825,
+                "organization_fk": null,
+                "primary": 1,
+                "local_reference_id": null
             }
         ]
     },
-    "AdditionalEmails": {
-        "@type": "AdditionalEmails",
+    "Names": {
+        "@type": "Names",
         "@set": [
             {
-                "@type": "AdditionalEmail",
-                "email": null,
-                "id": null,
-                "person_fk": null
+                "@type": "Name",
+                "id": 650,
+                "first_name": "John",
+                "last_name": "Smith",
+                "name_prefix_fk": null,
+                "name_suffix_fk": null,
+                "person_fk": 30825,
+                "middle_initial": null,
+                "primary": 1,
+                "local_reference_id": null
             }
         ]
     },
-    "AdditionalPostalAddresses": {
-        "@type": "AdditionalPostalAddresses",
-        "@set": [
-            {
-                "@type": "AdditionalPostalAddress",
-                "address1": null,
-                "address2": null,
-                "city": null,
-                "postal_code": null,
-                "country": null,
-                "country_code": null,
-                "id": null,
-                "person_fk": null,
-                "state_territory_province": null
-            }
-        ]
-    },
-    "email": "joes-new-email@compliance-noreply.com",
-    "fullname": "Joe Smith",
-    "id": 30711
+    "email": "jsmith@no-reply.org",
+    "fullname": "John Smith",
+    "id": 30825
 }
 ```
 
