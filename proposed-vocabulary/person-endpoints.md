@@ -15,7 +15,7 @@
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET** with no optional parameters.
 * Provides a list of all Person objects as stubs.
 
-```javascript
+```json
 {
     "@context": "http://grcschema.org/",
     "@type": "Stub",
@@ -48,10 +48,10 @@
 ### Quick-start Knowledge
 
 * Adding a new Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint as a REST **POST**.
-* The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept the the entire object for processing. This includes array items \(\@set\).
+* The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept the the entire object for processing. This includes array items \(\\@set\).
 * Duplicate email addresses are not allowed in the Person's data or in the system as whole.
 * When posting an object, all ID fields are ignored and can be set to **null**. Any parameter \(key\) or sub-object not provided is considered **null**.
-* When the Person object is created, Social Address information \(facebook, linkedin, etc\) is pulled automatically using Clearbit:tm: if available.
+* When the Person object is created, Social Address information (facebook, linkedin, etc\) is pulled automatically using Clearbit:tm: if available.
 * A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. \(See the `local_reference_id` section for more detail.\)
 
 ### Minimum Required Object
@@ -675,4 +675,3 @@
 },
 ...
 ```
-
