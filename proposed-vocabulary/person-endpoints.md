@@ -4,7 +4,6 @@
 
 ## GET Person Endpoints
 
-test 
 ### Quick-start Knowledge
 
 * The full JSON-LD Person object is defined at [https://grcschema.org/Person](https://grcschema.org/Person).
