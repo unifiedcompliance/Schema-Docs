@@ -4,7 +4,7 @@
 
 ## Quick-start Knowledge
 
-* A **Stub** is a Thing (object) representing another Thing (object) in a list.
+* A **Stub** is a Thing \(object\) representing another Thing \(object\) in a list.
 * In order to know the type of Thing the **Stub** represents, the `thing_type` property is provided.
 * The properties `property_name` and `property_value` are provided from the associated Thing record for identification of the record.
 * Distinct url parameters for each **Stub** list may be provided to enable list filtering via query string. The documentation for each list endpoint will provide the list of acceptable query string parameters.    
@@ -37,4 +37,5 @@
 }
 ```
 
-> The Stub represents a **Person** Thing (object) using the `Person.full_name` property.
+> The Stub represents a **Person** Thing \(object\) using the `Person.full_name` property.
+
