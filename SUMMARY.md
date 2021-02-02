@@ -6,6 +6,7 @@
 
 ## Proposed Vocabulary
 
+* [Organization Endpoints](proposed-vocabulary/organization-endpoints.md)
 * [NameSuffix Endpoints](proposed-vocabulary/namesuffix-endpoints.md)
 * [NamePrefix Endpoints](proposed-vocabulary/nameprefix-endpoints.md)
 * [Universal Stub Thing](proposed-vocabulary/universal-stub-thing.md)
