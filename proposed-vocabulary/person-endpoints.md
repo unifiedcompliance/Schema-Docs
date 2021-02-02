@@ -82,8 +82,8 @@
 * A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. (See the `local_reference_id` section for more detail.)
 
 ### Created_by Audit Record and Person 0
-* When you send a POST to create a Person object, you must supply an `x-requester-person` with a person id (the person making the request). This sets the created_by field in the audit record to the person who added the object.
-* In the case where a Person (as a user of your application) is adding themselves, `x-requester-person` may be set to 0 for the POST.  This will create the Person and assign the change to the newly created Person.
+* When you send a POST to create a Person object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the created_by field in the audit record to the person who added the object.
+* In the case where a Person (as a user of your application) is adding themselves, `x-requester-person` may be set to 0 for the POST.  This will create the Person and assign the change to the newly created Person. Any subsequent calls from that Person should use their ID.
 
 
 ### Minimum Required Object
@@ -321,6 +321,10 @@
 * Some properties cannot be changed and are ignored.  (e.g. fullname or any id or fk)
 * A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing required by some systems. (See the `local_reference_id` section for more detail.)
 
+### Modified_by Audit Record
+
+* When you send a PATCH to modify a Person object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the modified_by field in the audit record to the person who modified the object.
+
 ### Performing a Property (Key) Value Update
 
 * Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json PATCH** to the [https://grcschema.org/Person/:id](https://grcschema.org/Person/:id) endpoint and the full Person object will be returned with the requested changes.
@@ -493,27 +497,27 @@
 
 ### Adding a Sub-Object
 
-> This adds three additional AdditionalEmail objects into AdditionalEmails and the full Person object is returned with the id and fk for all sub-objects filled in.
+> This adds three additional Email objects into Emails and the full Person object is returned with the id and fk for all sub-objects filled in.
 
 ```javascript
 ...
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"Emails": {
+    "@type": "Emails",
     "@set": [
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "email": "joe@personal-noreply.com",
             "id": null,
             "person_fk": null
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "email": "jsmith@compliance-noreply.com",
             "id": null,
             "person_fk": null
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "email": "js@compliance-noreply.com",
             "id": null,
             "person_fk": null
@@ -529,23 +533,23 @@
 
 ```javascript
 ...
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"Emails": {
+    "@type": "Emails",
     "@set": [
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 256,
             "email": "joe@personal-noreply.com",
             "person_fk": 30711
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 257,
             "email": "jsmithCHANGED@compliance-noreply.com",
             "person_fk": 30711
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 258,
             "email": "js@compliance-noreply.com",
             "person_fk": 30711
@@ -561,23 +565,23 @@
 
 ```javascript
 ...
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"Emails": {
+    "@type": "Emails",
     "@set": [
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 256,
             "email": "joe@personal-noreply.com",
             "person_fk": 30711
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 257,
             "email": "jsmith@compliance-noreply.com",
             "person_fk": 30711
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 258
         }
     ]
@@ -593,21 +597,21 @@
 
 ```javascript
 ...
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"Emails": {
+    "@type": "Emails",
     "@set": [
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 256,
             "email": "joeCHANGE2@personal-noreply.com",
             "person_fk": 30711
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 257
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": null,
             "email": "jsmith-NEW@compliance-noreply.com",
             "person_fk": null
@@ -639,24 +643,36 @@
 {
     "@context": "http://grcschema.org/",
     "@type": "Person",
-    "PersonName": {
-        "@type": "PersonName",
-        "first_name": "Bob",
-        "last_name": "Roberts"
-    },    
-    "AdditionalEmails": {
-        "@type": "AdditionalEmails",
+    "Names": {
+        "@type": "Names",
         "@set": [
             {
-                "@type": "AdditionalEmail",
+                "@type": "Name",
+                "id": 650,
+                "first_name": "John",
+                "last_name": "Smith",
+                "name_prefix_fk": null,
+                "name_suffix_fk": null,
+                "person_fk": 30825,
+                "middle_initial": null,
+                "primary": 1,
+            }
+        ]
+    },  
+    "Emails": {
+        "@type": "Emails",
+        "@set": [
+            {
+                "@type": "Email",
                 "id": null,
-                "email": "bobr123@gmail.com",
+                "email": "jsmith-changed@gmail.com",
                 "person_fk": null,
+                "primary": 1,
                 "local_reference_id": "5e98ced6-786e-4488-9186-32a4b57924ae"
             }
         ]
     },
-    "email": "bobr@compliance-noreply.com",
+    "email": "jsmith@gmail.com",
     "local_reference_id": "1808bd7f-c99d-4ed0-8310-87483427041f"
 }
 ```
@@ -668,30 +684,39 @@
     "@context": "http://grcschema.org/",
     "@type": "Person",
 ...
-    "PersonName": {
-        "@type": "PersonName",
-        "first_name": "Bob",
-        "last_name": "Roberts",
-        "middle_initial": null,
-        "name_prefix": null,
-        "name_suffix": null
-    },
+"Names": {
+    "@type": "Names",
+    "@set": [
+        {
+            "@type": "Name",
+            "id": 650,
+            "first_name": "John",
+            "last_name": "Smith",
+            "name_prefix_fk": null,
+            "name_suffix_fk": null,
+            "person_fk": 30825,
+            "middle_initial": null,
+            "primary": 1,
+        }
+    ]
+},
 ...
-    "AdditionalEmails": {
-        "@type": "AdditionalEmails",
+    "Emails": {
+        "@type": "Emails",
         "@set": [
             {
-                "@type": "AdditionalEmail",
+                "@type": "Email",
                 "id": 325,
-                "email": "bobr123@gmail.com",
+                "email": "jsmith-changed@gmail.com",
                 "person_fk": 30755,
+                "primary": 1,
                 "local_reference_id": "5e98ced6-786e-4488-9186-32a4b57924ae"
             }
         ]
     },
 ...
-    "email": "bobr@compliance-noreply.com",
-    "fullname": "Bob Roberts",
+    "email": "jsmith-changed@gmail.com",
+    "fullname": "John Smith",
     "id": 30755,
     "local_reference_id": "1808bd7f-c99d-4ed0-8310-87483427041f"
 }
@@ -705,7 +730,7 @@
 
 ```javascript
 ...
-"email": "joes-new-email@compliance-noreply.com",
+"email": "jsmith-changed@gmail.com",
 "fullname": "Joe E Smith",
 "id": 30711,
 "local_reference_id": "ae411a78-fa0d-446e-a47c-2e03fc07bd3b"
@@ -719,23 +744,23 @@
 
 ```javascript
 ...
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"Emails": {
+    "@type": "Emails",
     "@set": [
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 256,
             "email": "joeCHANGE4@personal-noreply.com",
             "person_fk": 30711,
             "local_reference_id": "54f30b24-1d1d-4d73-9152-706a0c165f4b"
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 305,
             "local_reference_id": "6efe8712-6670-4c4e-b2c4-9399b9a4b0a6"
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": null,
             "email": "joe-NEW-EMAIL@personal-noreply.com",
             "person_fk": null,
@@ -750,23 +775,23 @@
 
 ```javascript
 ...
-"AdditionalEmails": {
-    "@type": "AdditionalEmails",
+"Emails": {
+    "@type": "Emails",
     "@set": [
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 256,
             "email": "joeCHANGE4@personal-noreply.com",
             "person_fk": 30711,
             "local_reference_id": "54f30b24-1d1d-4d73-9152-706a0c165f4b"
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 305,
             "local_reference_id": "6efe8712-6670-4c4e-b2c4-9399b9a4b0a6"
         },
         {
-            "@type": "AdditionalEmail",
+            "@type": "Email",
             "id": 323,
             "email": "joe-NEW-EMAIL@personal-noreply.com",
             "person_fk": 30711,
