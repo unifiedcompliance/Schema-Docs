@@ -14,11 +14,12 @@
 
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET** with no optional parameters.
 * Provides a list of all Person objects as stubs. Stubs show the `property_name` and `property_value` targeted by the stub.
-* Pagination is provided for the list where `count` is the total quantity of objects in the data-set, `limit` is how many objects are returned in the current list, and `offset` is the first object in the list. This is configurable in the request, but the default is a limit of 50 objects starting from offset 1.
+* Pagination is provided for the list where `count` is the total quantity of objects in the data-set, `limit` is how many objects are returned in the current list, and `offset` is the first object in the set from that offset point. This is configurable in the request, but the default is a limit of 50 objects starting from offset 0.
 
-> In the below example, page 1 starts from offset 1 with two values (`limit`).
-> Page 2 starts from `offset`= 3. Page 3 from `offset` = 5, etc.
+> In the below example, with a limit of 2, page 1 starts from offset 0 with two values (`limit`).
+> Page 2 starts from `offset`= 2. Page 3 from `offset`= 4, etc.
 > There would be 5 pages to display the data - two objects at a time.
+> This is illustrative only, and the actual local pages will depend on your limit and count.
 
 ```json
 {
@@ -27,7 +28,7 @@
     "@type": "Pagination",
     "count": 10,
     "limit": 2,
-    "offset": 1
+    "offset": 0
   },
   "@set": [
     {
