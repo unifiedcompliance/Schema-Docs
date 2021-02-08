@@ -10,7 +10,7 @@
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET**. Optional parameters may be provided to filter and paginate the result.
 * Getting a single Person object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint using a REST **GET**.
 
-### Get Person \(basic\)
+### Get Person (basic)
 
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET** with no optional parameters.
 * Provides a list of all Person objects as stubs. Stubs show the `property_name` and `property_value` targeted by the stub.
@@ -799,4 +799,3 @@
 },
 ...
 ```
-
