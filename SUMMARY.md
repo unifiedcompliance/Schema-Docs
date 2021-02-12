@@ -6,11 +6,10 @@
 
 ## Proposed Vocabulary
 
-* [Organization Endpoints](proposed-vocabulary/organization-endpoints.md)
+* [Person Endpoints](proposed-vocabulary/person-endpoints.md)
 * [NameSuffix Endpoints](proposed-vocabulary/namesuffix-endpoints.md)
 * [NamePrefix Endpoints](proposed-vocabulary/nameprefix-endpoints.md)
-* [Universal Stub Thing](proposed-vocabulary/universal-stub-thing.md)
-* [Person Endpoints](proposed-vocabulary/person-endpoints.md)
+* [Organization Endpoints](proposed-vocabulary/organization-endpoints.md)
 * [AuditData Endpoints](proposed-vocabulary/audit-endpoints.md)
 * [Proposal of a Checksum for RESTful record validation](proposed-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
 * [Country Endpoints](proposed-vocabulary/country-endpoints.md)
@@ -26,6 +25,7 @@
   * [Language](accepted-vocabulary/general-items/language.md)
   * [Currency](accepted-vocabulary/general-items/currency.md)
   * [Country](accepted-vocabulary/general-items/country.md)
+* [Universal Stub Thing](accepted-vocabulary/universal-stub-thing.md)
 
 ## Schema Standard
 
