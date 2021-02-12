@@ -11,11 +11,14 @@
 * [NamePrefix Endpoints](proposed-vocabulary/nameprefix-endpoints.md)
 * [Organization Endpoints](proposed-vocabulary/organization-endpoints.md)
 * [AuditData Endpoints](proposed-vocabulary/audit-endpoints.md)
-* [Proposal of a Checksum for RESTful record validation](proposed-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
 * [Country Endpoints](proposed-vocabulary/country-endpoints.md)
 * [Currency Endpoints](proposed-vocabulary/currency-endpoints.md)
-* [AuthorityDocument Endpoints](proposed-vocabulary/authoritydocument-endpoints.md)
 * [Language Endpoints](proposed-vocabulary/language-endpoints.md)
+* [Character Endpoints](proposed-vocabulary/character-endpoints.md)
+* [Role Endpoints](proposed-vocabulary/role-endpoints.md)
+* [Group Endpoints](proposed-vocabulary/group-endpoints.md)
+* [Initiative Endpoints](proposed-vocabulary/initiative-endpoints.md)
+* [AuthorityDocument Endpoints](proposed-vocabulary/authoritydocument-endpoints.md)
 
 ## Accepted Vocabulary
 
@@ -26,6 +29,7 @@
   * [Currency](accepted-vocabulary/general-items/currency.md)
   * [Country](accepted-vocabulary/general-items/country.md)
 * [Universal Stub Thing](accepted-vocabulary/universal-stub-thing.md)
+* [Proposal of a Checksum for RESTful record validation](accepted-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
 
 ## Schema Standard
 
