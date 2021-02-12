@@ -11,7 +11,8 @@
 * [NamePrefix Endpoints](proposed-vocabulary/nameprefix-endpoints.md)
 * [Universal Stub Thing](proposed-vocabulary/universal-stub-thing.md)
 * [Person Endpoints](proposed-vocabulary/person-endpoints.md)
-* [Audit Endpoints](proposed-vocabulary/audit-endpoints.md)
+* [AuditData Endpoints](proposed-vocabulary/audit-endpoints/README.md)
+  * [Country Endpoints](proposed-vocabulary/audit-endpoints/country-endpoints.md)
 * [Proposal of a Checksum for RESTful record validation](proposed-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
 
 ## Accepted Vocabulary

@@ -10,16 +10,15 @@
 * Getting a list of Organization object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Organization](https://grcschema.p.rapidapi.com/Organization) endpoint using a REST **GET**. Optional parameters may be provided to filter and paginate the result.
 * Getting a single Organization object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Organization/:id](https://grcschema.p.rapidapi.com/Organization/:id) endpoint using a REST **GET**.
 
-### Get Organization (basic & pagination)
+### Get Organization \(basic & pagination\)
 
 * Getting a list of Organization object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Organization](https://grcschema.p.rapidapi.com/Organization) endpoint using a REST **GET** with no optional parameters.
 * Provides a list of all Organization objects as stubs. Stubs show the `property_name` and `property_value` targeted by the stub.
 * Pagination is provided for the list where `count` is the total quantity of objects in the data-set, `limit` is how many objects are returned in the current list, and `offset` is the first object in the set from that offset point. This is configurable in the request, but the default is a limit of 50 objects starting from offset 0.
 
-> In the below example, with a limit of 2, page 1 starts from offset 0 with two values (`limit`). Page 2 starts from `offset`= 2. Page 3 from `offset`= 4, etc. There would be 5 pages to display the data - two objects at a time. This is illustrative only, and the actual local pages will depend on your limit and count.
+> In the below example, with a limit of 2, page 1 starts from offset 0 with two values \(`limit`\). Page 2 starts from `offset`= 2. Page 3 from `offset`= 4, etc. There would be 5 pages to display the data - two objects at a time. This is illustrative only, and the actual local pages will depend on your limit and count.
 
-```json
-
+```javascript
 {
   "Pagination": {
     "@context": "http://grcschema.org/",
@@ -47,9 +46,9 @@
     }
   ]
 }
-
 ```
-### Get Organization (filtered & pagination)
+
+### Get Organization \(filtered & pagination\)
 
 * Getting a filtered list of Organization objects from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Organization/](https://grcschema.p.rapidapi.com/Organization/) endpoint using a REST **GET** with URL parameters.
 * These are the parameters you can optionally supply to the filter. Name and search fields work as a logical AND.
@@ -58,7 +57,7 @@
 | :--- | :--- |
 | name | Searches all or a portion of a organization's name. |
 | search | Searches across all searchable fields. |
-| sort_dir | 0 = descending, 1 = ascending |
+| sort\_dir | 0 = descending, 1 = ascending |
 | limit | Combined with offset, provides pagination by limiting results. |
 | offset | Combined with limit, provides pagination by shifting the first record. |
 
@@ -71,23 +70,23 @@
 ### Quick-start Knowledge
 
 * Adding a new Organization object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Organization](https://grcschema.p.rapidapi.com/Organization) endpoint as a REST **POST**.
-* The full JSON-LD object is defined at [https://grcschema.org/Organization](https://grcschema.org/Organization), and the endpoint will accept the the entire object for processing. This includes array items (@set).
+* The full JSON-LD object is defined at [https://grcschema.org/Organization](https://grcschema.org/Organization), and the endpoint will accept the the entire object for processing. This includes array items \(@set\).
 * Duplicate email addresses are not allowed in the Organization's data or in the system as whole.
-* When posting an object, all ID fields are ignored and can be set to **null**. Any parameter (key) or sub-object not provided is considered **null**.
-* When the Organization object is created, Social Address information (facebook, linkedin, etc) and other organization data (by domain) is pulled automatically using Clearbit:tm: if available.
-* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. (See the `local_reference_id` section for more detail.)
+* When posting an object, all ID fields are ignored and can be set to **null**. Any parameter \(key\) or sub-object not provided is considered **null**.
+* When the Organization object is created, Social Address information \(facebook, linkedin, etc\) and other organization data \(by domain\) is pulled automatically using Clearbit:tm: if available.
+* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. \(See the `local_reference_id` section for more detail.\)
 * All new objects require a person id performing the update which is accomplished via the `x-requester-person` header value.
 
-### Created_by Audit Record
+### Created\_by Audit Record
 
-* When you send a POST to create an object, you MUST supply an `x-requester-person` in the header as the person id making the request. This sets the created_by field in the audit record to the person who added the object.
+* When you send a POST to create an object, you MUST supply an `x-requester-person` in the header as the person id making the request. This sets the created\_by field in the audit record to the person who added the object.
 
 ### Minimum Required Object
 
 * Only one primary name and one primary email are required to create an Organization object, however you may supply any other data that complies with the full schema object.
 * If you supply a valid domain name, the organization will be populated with lookup data from Clearbit:tm:.
 
-```json
+```javascript
 {
   "@context": "http://grcschema.org/",
   "@type": "Organization",
@@ -111,13 +110,13 @@
   "local_reference_id": "organization-ref-id"
 }
 ```
+
 ### Response Object
 
 * The minimum response object that is returned is the FULL Organization JSON object as defined by grcschema.
 * Where an array of objects exists with no records, the **default example object** is returned. This can be determined by the response having an **"id": null** key/value pair. The other parameters for that object will also be null as seen in the following example.
 
-
-```
+```text
 {
     "@context": "http://grcschema.org/",
     "@type": "Organization",
@@ -243,31 +242,31 @@
     "email": "compliance@testcompliance-test.com"
 }
 ```
+
 ## PATCH Organization Endpoint
 
 ### Quick-start Knowledge
 
 * Updating an Organization object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Organization/:id](https://grcschema.p.rapidapi.com/Organization/:id) endpoint as a REST **PATCH**.
-* The full JSON-LD object is defined at [https://grcschema.org/Organization](https://grcschema.org/Organization), and the endpoint will accept an **existing** Organization object (with applicable changes) for processing.
+* The full JSON-LD object is defined at [https://grcschema.org/Organization](https://grcschema.org/Organization), and the endpoint will accept an **existing** Organization object \(with applicable changes\) for processing.
 * Duplicate email addresses are not allowed in the Organization's data or in the system as whole.
 * When updating any object or sub-object, ID and FK fields cannot be changed.
-* **Example sub-objects** in @set arrays are ignored in the update. (where all properties are null)
+* **Example sub-objects** in @set arrays are ignored in the update. \(where all properties are null\)
 * Some properties cannot be changed and are ignored.
-* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing required by some systems. (See the `local_reference_id` section for more detail.)
+* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing required by some systems. \(See the `local_reference_id` section for more detail.\)
 
+### Modified\_by Audit Record
 
-### Modified_by Audit Record
+* When you send a PATCH to modify an object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the modified\_by field in the audit record to the person who modified the object.
 
-* When you send a PATCH to modify an object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the modified_by field in the audit record to the person who modified the object.
-
-### Performing a Property (Key) Value Update
+### Performing a Property \(Key\) Value Update
 
 * Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json PATCH** to the [https://grcschema.org/Organization/:id](https://grcschema.org/Organization/:id) endpoint and the full Person object will be returned with the requested changes.
 * Container objects like SocialAddresses are part of the core person record and are displayed as objects for data organization purposes only.
 
 > Here is an example of updating `legal_name` for the organization example above.
 
-```json
+```javascript
 {
     "@context": "http://grcschema.org/",
     "@type": "Organization",
@@ -398,14 +397,14 @@
 
 * Updating @set objects have **three** special rules.
 * Add a new sub-object by supplying data to any property in any number of objects of @type while leaving the id and fk parameters **null**.
-* Change a sub-object instance by changing the property (or properties) without modifying the id or fk fields.
+* Change a sub-object instance by changing the property \(or properties\) without modifying the id or fk fields.
 * Remove a sub-object instance by removing all the properties except for **@type** and **id**.
 
 ### Adding a Sub-Object
 
 > This adds two additional, non-primary Email objects into Emails and the full Organization object is returned with the id and fk for all sub-objects filled in.
 
-```json
+```javascript
 ...
 "Emails": {
     "@type": "Emails",
@@ -548,12 +547,12 @@
 
 ### Quick-start Knowledge
 
-* For all endpoints with `POST` and `PATCH` operations, you may send an optional `local_reference_id` for the core object and any sub-objects in unordered lists (@set arrays).  This `local_reference_id` will be returned (like an echo) for that object.
+* For all endpoints with `POST` and `PATCH` operations, you may send an optional `local_reference_id` for the core object and any sub-objects in unordered lists \(@set arrays\).  This `local_reference_id` will be returned \(like an echo\) for that object.
 * It is recommended you use a Type 4 UUID which is unique for that object in your system and tie the federated ID to your record for later use in querying the federated system for that object.
 
 ### POST Operation Example
 
-> For the core object, you may place a `local_reference_id` at the object root level, and it will be returned in the response. Do not add `local_reference_id` to the container objects like PersonName. For sub-object, unordered lists (@set arrays), you may place a `local_reference_id` in each object, and it will be returned to you in the response.
+> For the core object, you may place a `local_reference_id` at the object root level, and it will be returned in the response. Do not add `local_reference_id` to the container objects like PersonName. For sub-object, unordered lists \(@set arrays\), you may place a `local_reference_id` in each object, and it will be returned to you in the response.
 
 **SEND**
 
@@ -596,7 +595,7 @@
 }
 ```
 
-**RESPONSE (Abbreviated)**
+**RESPONSE \(Abbreviated\)**
 
 ```javascript
 {
@@ -656,7 +655,7 @@
 }
 ```
 
-> For sub-object, unordered lists (@set arrays), you may place a `local_reference_id` in each object, and it will be returned to you in the response.  
+> For sub-object, unordered lists \(@set arrays\), you may place a `local_reference_id` in each object, and it will be returned to you in the response.  
 > Note: When a `local_reference_id` is used during delete operation, the object will be returned with no properties but with your `local_reference_id` denoting the object was deleted. If you do not require a returned object denoting the deletion, do not send the `local_reference_id` key and value.
 
 **SEND**
@@ -720,3 +719,4 @@
 },
 ...
 ```
+
