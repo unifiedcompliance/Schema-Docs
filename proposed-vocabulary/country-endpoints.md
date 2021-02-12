@@ -12,7 +12,7 @@
 ### Country List GET
 
 * Getting a list of Country object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Country](https://grcschema.p.rapidapi.com/Country) endpoint using a REST **GET** with no optional parameters.
-* Provides a list of all Country objects.
+* Provides a list of all Country objects **as Universal Stubs**.
 * Pagination is provided for the list where `count` is the total quantity of objects in the data-set, `limit` is how many objects are returned in the current list, and `offset` is the first object in the set from that offset point. This is configurable in the request, but the default is a limit of 50 objects starting from offset 0.
 
 > In the below example, with a limit of 2, page 1 starts from offset 0 with two values \(`limit`\). Page 2 starts from `offset`= 2. Page 3 from `offset`= 4, etc. There would be 5 pages to display the data - two objects at a time. This is illustrative only, and the actual local pages will depend on your limit and count.
@@ -63,4 +63,3 @@
 ### Country GET \(by ID\)
 
 * Getting a single Country object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Country/:id](https://grcschema.p.rapidapi.com/Country/:id) endpoint using a REST **GET**.
-
