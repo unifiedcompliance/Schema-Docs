@@ -13,6 +13,10 @@
 * [Person Endpoints](proposed-vocabulary/person-endpoints.md)
 * [AuditData Endpoints](proposed-vocabulary/audit-endpoints.md)
 * [Proposal of a Checksum for RESTful record validation](proposed-vocabulary/proposal-of-a-checksum-for-restful-record-validation.md)
+* [Country Endpoints](proposed-vocabulary/country-endpoints.md)
+* [Currency Endpoints](proposed-vocabulary/currency-endpoints.md)
+* [AuthorityDocument Endpoints](proposed-vocabulary/authoritydocument-endpoints.md)
+* [Language Endpoints](proposed-vocabulary/language-endpoints.md)
 
 ## Accepted Vocabulary
 
