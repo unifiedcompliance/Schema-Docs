@@ -1,6 +1,5 @@
 # Character Endpoints
 
-
 > This document explains the methods you may use to work with the Character endpoints in the Federated Authority Document database.
 
 ## Getting Character
@@ -94,3 +93,4 @@
 ### Character GET \(by ID\)
 
 * Getting a single Character object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Character/:id](https://grcschema.p.rapidapi.com/Character/:id) endpoint using a REST **GET**.
+

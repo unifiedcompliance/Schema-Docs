@@ -63,3 +63,4 @@
 ### Language GET \(by ID\)
 
 * Getting a single Language object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Language/:id](https://grcschema.p.rapidapi.com/Language/:id) endpoint using a REST **GET**.
+

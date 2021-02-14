@@ -65,3 +65,4 @@
 ### Currency GET \(by ID\)
 
 * Getting a single Currency object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Currency/:id](https://grcschema.p.rapidapi.com/Currency/:id) endpoint using a REST **GET**.
+

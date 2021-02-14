@@ -63,3 +63,4 @@
 ### Role GET \(by ID\)
 
 * Getting a single Role object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Role/:id](https://grcschema.p.rapidapi.com/Role/:id) endpoint using a REST **GET**.
+

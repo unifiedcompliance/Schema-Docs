@@ -63,3 +63,4 @@
 ### Country GET \(by ID\)
 
 * Getting a single Country object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Country/:id](https://grcschema.p.rapidapi.com/Country/:id) endpoint using a REST **GET**.
+
