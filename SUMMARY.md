@@ -53,6 +53,6 @@
 
 ## The Elements of Compliance for Developers
 
-* [Element List \(and intro\)](the-elements-of-compliance-for-developers/introduction/README.md)
-  * [Authority Document Library](the-elements-of-compliance-for-developers/introduction/authority-document-library.md)
+* [Sample Application\(s\)](the-elements-of-compliance-for-developers/introduction/README.md)
+  * [The Shell application](the-elements-of-compliance-for-developers/introduction/the-shell-application.md)
 
