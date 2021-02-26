@@ -55,4 +55,5 @@
 
 * [Sample Application\(s\)](the-elements-of-compliance-for-developers/introduction/README.md)
   * [The Shell application](the-elements-of-compliance-for-developers/introduction/the-shell-application.md)
+  * [Initial Sign-up sequence](the-elements-of-compliance-for-developers/introduction/initial-sign-up-sequence.md)
 
