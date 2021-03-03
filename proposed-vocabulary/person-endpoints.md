@@ -10,13 +10,13 @@
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET**. Optional parameters may be provided to filter and paginate the result.
 * Getting a single Person object from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint using a REST **GET**.
 
-### Get Person \(basic\)
+### Get Person (basic)
 
 * Getting a list of Person object stubs from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint using a REST **GET** with no optional parameters.
 * Provides a list of all Person objects as stubs. Stubs show the `property_name` and `property_value` targeted by the stub.
 * Pagination is provided for the list where `count` is the total quantity of objects in the data-set, `limit` is how many objects are returned in the current list, and `offset` is the first object in the set from that offset point. This is configurable in the request, but the default is a limit of 50 objects starting from offset 0.
 
-> In the below example, with a limit of 2, page 1 starts from offset 0 with two values \(`limit`\). Page 2 starts from `offset`= 2. Page 3 from `offset`= 4, etc. There would be 5 pages to display the data - two objects at a time. This is illustrative only, and the actual local pages will depend on your limit and count.
+> In the below example, with a limit of 2, page 1 starts from offset 0 with two values (`limit`). Page 2 starts from `offset`= 2. Page 3 from `offset`= 4, etc. There would be 5 pages to display the data - two objects at a time. This is illustrative only, and the actual local pages will depend on your limit and count.
 
 ```javascript
 {
@@ -48,17 +48,17 @@
 }
 ```
 
-### Get Person \(filtered & pagination\)
+### Get Person (filtered & pagination)
 
 * Getting a filtered list of Person objects from the Federated Authority Document Database is accomplished by querying the [https://grcschema.p.rapidapi.com/Person/](https://grcschema.p.rapidapi.com/Person/) endpoint using a REST **GET** with url parameters.
 * These are the parameters you can optionally supply to the filter. These fields work as a logical AND.
 
 | Field | Description |
 | :--- | :--- |
-| first\_name | Searches all or a portion of a person's first name. |
-| last\_name | Searches all or a portion of a person's last name. |
+| first_name | Searches all or a portion of a person's first name. |
+| last_name | Searches all or a portion of a person's last name. |
 | email | Searches all or a portion of a person's email address. |
-| sort\_dir | 0 = descending, 1 = ascending |
+| sort_dir | 0 = descending, 1 = ascending |
 | search | Searches across all searchable fields. |
 | limit | Combined with offset, provides pagination by limiting results. |
 | offset | Combined with limit, provides pagination by shifting the first record. |
@@ -72,36 +72,27 @@
 ### Quick-start Knowledge
 
 * Adding a new Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person](https://grcschema.p.rapidapi.com/Person) endpoint as a REST **POST**.
-* The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept the the entire object for processing. This includes array items \(@set\).
+* The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept the the entire object for processing. This includes array items (@set).
 * Duplicate email addresses are not allowed in the Person's data or in the system as whole.
-* When posting an object, all ID fields are ignored and can be set to **null**. Any parameter \(key\) or sub-object not provided is considered **null**.
-* When the Person object is created, Social Address information \(facebook, linkedin, etc\) is pulled automatically using Clearbit:tm: if available.
-* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. \(See the `local_reference_id` section for more detail.\)
+* When posting an object, all ID fields are ignored and can be set to **null**. Any parameter (key) or sub-object not provided is considered **null**.
+* When the Person object is created, Social Address information (facebook, linkedin, etc) is pulled automatically using Clearbit:tm: if available.
+* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing is maintained in some systems. (See the `local_reference_id` section for more detail.)
 * All new objects require a person id performing the update which is accomplished via the `x-requester-person` header value.
 
-### Created\_by Audit Record and Person 0
+### Created_by Audit Record and Person 0
 
-* When you send a POST to create an object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the created\_by field in the audit record to the person who added the object.
-* In the case where a Person \(as a user of your application\) is adding themselves, `x-requester-person` may be set to 0 for the POST.  This will create the Person and assign the change to the newly created Person. Any subsequent calls from that Person should use their ID.
+* When you send a POST to create an object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the created_by field in the audit record to the person who added the object.
+* In the case where a Person (as a user of your application) is adding themselves, `x-requester-person` may be set to 0 for the POST.  This will create the Person and assign the change to the newly created Person. Any subsequent calls from that Person should use their ID.
 
 ### Minimum Required Object
 
-* Only one primary name \(first name, last name\) and one primary email are required to create a Person object, however you may supply any other data that complies with the full schema object.
+* Only one primary name (`first_name` and `last_name`) or one `freeform_name` are required to create a Person object, however you may supply any other data that complies with the full schema object.
+* The primary name (where `primary` is true) is used to populate the `Person.fullname` read only property.  This value is used in the stub list.
 
 ```javascript
 {
   "@context": "https://grcschema.org",
   "@type": "Person",
-  "Emails": {
-    "@type": "Emails",
-    "@set": [
-      {
-        "@type": "Email",
-        "email": "jsmith@no-reply.org",
-        "primary": 1
-      }
-    ]
-  },
   "Names": {
     "@type": "Names",
     "@set": [
@@ -109,13 +100,39 @@
         "@type": "Name",
         "first_name": "John",
         "last_name": "Smith",
-        "primary": 1
+        "freeform_name": null,
+        "primary": true
       }
     ]
   },
   "id": null
 }
 ```
+> Alternatively, you may use freeform_name for names, aliases, etc that do not fit the structured naming format.
+
+```javascript
+{
+  "@context": "https://grcschema.org",
+  "@type": "Person",
+  "Names": {
+    "@type": "Names",
+    "@set": [
+      {
+        "@type": "Name",
+        "first_name": null,
+        "last_name": null,
+        "freeform_name": "J. Smith (Smitty)",
+        "primary": true
+      }
+    ]
+  },
+  "id": null
+}
+```
+### Constraints
+* When a structured name is added, `firstname` and `lastname` are required.
+* A Person may be added with only a Name object, but only one Person of any given name may exist like this.  You cannot add two John Smith Persons with only a `Person.Names.Name`
+* A name can duplicate when an email address is provided that differs from any email address in the system for a Person. (e.g. John Smith with jsmith@abc.com is considered a different Person than jsmith@xyz.com)
 
 ### Response Object
 
@@ -207,13 +224,15 @@
     },
     "CoreMetaData": {
         "@type": "CoreMetaData",
-        "date_created": "2021-02-02",
-        "date_modified": "2021-02-02",
-        "created_audit_id": 74,
+        "date_created": "2021-03-03",
+        "date_modified": "2021-03-03",
+        "created_audit_id": 171,
         "modified_audit_id": null,
         "live_status": null,
         "checksum": 0,
-        "validated": 0
+        "validated": true,
+        "deprecated_notes": null,
+        "superceded_by": null
     },
     "PersonMemberships": {
         "@type": "PersonMemberships",
@@ -271,12 +290,12 @@
         "@set": [
             {
                 "@type": "Email",
-                "id": 501,
-                "email": "jsmith@no-reply.org",
-                "person_fk": 30825,
+                "email": null,
+                "id": null,
+                "person_fk": null,
                 "organization_fk": null,
-                "primary": 1,
-                "local_reference_id": null
+                "local_reference_id": null,
+                "primary": null
             }
         ]
     },
@@ -285,21 +304,22 @@
         "@set": [
             {
                 "@type": "Name",
-                "id": 650,
+                "id": 689,
                 "first_name": "John",
                 "last_name": "Smith",
                 "name_prefix_fk": null,
                 "name_suffix_fk": null,
-                "person_fk": 30825,
+                "freeform_name": null,
+                "person_fk": 30863,
                 "middle_initial": null,
-                "primary": 1,
-                "local_reference_id": null
+                "primary": true,
+                "local_reference_id": "name-1"
             }
         ]
     },
-    "email": "jsmith@no-reply.org",
+    "email": null,
     "fullname": "John Smith",
-    "id": 30825
+    "id": 30863
 }
 ```
 
@@ -312,23 +332,23 @@
 ### Quick-start Knowledge
 
 * Updating a Person object is accomplished by sending an **application/json** content type object to the [https://grcschema.p.rapidapi.com/Person/:id](https://grcschema.p.rapidapi.com/Person/:id) endpoint as a REST **PATCH**.
-* The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept an **existing** Person object \(with applicable changes\) for processing.
+* The full JSON-LD object is defined at [https://grcschema.org/Person](https://grcschema.org/Person), and the endpoint will accept an **existing** Person object (with applicable changes) for processing.
 * Duplicate email addresses are not allowed in the Person's data or in the system as whole.
 * When updating any object or sub-object, ID and FK fields cannot be changed.
-* **Example sub-objects** in @set arrays are ignored in the update. \(where all properties are null\)
-* Some properties cannot be changed and are ignored.  \(e.g. fullname or any id or fk\)
-* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing required by some systems. \(See the `local_reference_id` section for more detail.\)
+* **Example sub-objects** in @set arrays are ignored in the update. (where all properties are null)
+* Some properties cannot be changed and are ignored.  (e.g. fullname or any id or fk)
+* A `local_reference_id` may be supplied to any core object or sub-object which will be echoed within the object response.  This allows tagging of any object to ensure accurate processing required by some systems. (See the `local_reference_id` section for more detail.)
 
-### Modified\_by Audit Record
+### Modified_by Audit Record
 
-* When you send a PATCH to modify an object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the modified\_by field in the audit record to the person who modified the object.
+* When you send a PATCH to modify an object, you must supply an `x-requester-person` in the header as the person id making the request. This sets the modified_by field in the audit record to the person who modified the object.
 
-### Performing a Property \(Key\) Value Update
+### Performing a Property (Key) Value Update
 
 * Change the properties of the object pulled from **GET /Person/:id** by sending an **application/json PATCH** to the [https://grcschema.org/Person/:id](https://grcschema.org/Person/:id) endpoint and the full Person object will be returned with the requested changes.
 * Container objects like PostalAddress, SocialAddresses, and PersonName are part of the core person record and are displayed as objects for data organization purposes only.
 
-> Here is an example with Joe - adding a telephone, a role, and an address.
+> Here is an example with John - adding an email, telephone, a role, and an address.
 
 ```javascript
 {
@@ -343,8 +363,8 @@
                 "phone_number": "623-555-1212",
                 "person_fk": null,
                 "organization_fk": null,
-                "local_reference_id": "telephone1",
-                "primary": 1
+                "local_reference_id": "phonenumber-1",
+                "primary": true
             }
         ]
     },
@@ -357,7 +377,7 @@
                 "id": null,
                 "role_fk": 245,
                 "person_fk": null,
-                "local_reference_id": "role1"
+                "local_reference_id": "role-1"
             }
         ]
     },
@@ -365,19 +385,19 @@
         "@type": "PostalAddresses",
         "@set": [
             {
-                "primary": 1,
+                "primary": null,
                 "@type": "PostalAddress",
                 "address1": "123 West East Street",
-                "address2": "Suite 100",
+                "address2": "#107",
                 "city": "Phoenix",
-                "postal_code": "85028",
+                "postal_code": "85340",
                 "country": "United States of America",
                 "id": null,
                 "country_code": "USA",
                 "person_fk": null,
                 "organization_fk": null,
-                "state_territory_province": "Arizona",
-                "local_reference_id": "postal1"
+                "state_territory_province": null,
+                "local_reference_id": "postal-1"
             }
         ]
     },
@@ -390,13 +410,15 @@
     },
     "CoreMetaData": {
         "@type": "CoreMetaData",
-        "date_created": "2021-02-02",
-        "date_modified": "2021-02-02",
-        "created_audit_id": 74,
+        "date_created": "2021-03-03",
+        "date_modified": "2021-03-03",
+        "created_audit_id": 171,
         "modified_audit_id": null,
         "live_status": null,
         "checksum": 0,
-        "validated": 0
+        "validated": true,
+        "deprecated_notes": null,
+        "superceded_by": null
     },
     "PersonMemberships": {
         "@type": "PersonMemberships",
@@ -454,11 +476,170 @@
         "@set": [
             {
                 "@type": "Email",
-                "id": 501,
                 "email": "jsmith@no-reply.org",
-                "person_fk": 30825,
+                "id": null,
+                "person_fk": null,
                 "organization_fk": null,
-                "primary": 1,
+                "local_reference_id": null,
+                "primary": true
+            }
+        ]
+    },
+    "Names": {
+        "@type": "Names",
+        "@set": [
+            {
+                "@type": "Name",
+                "id": 689,
+                "first_name": "John",
+                "last_name": "Smith",
+                "name_prefix_fk": null,
+                "name_suffix_fk": null,
+                "freeform_name": null,
+                "person_fk": 30863,
+                "middle_initial": null,
+                "primary": true,
+                "local_reference_id": "name-1"
+            }
+        ]
+    },
+    "email": null,
+    "fullname": "John Smith",
+    "id": 30863
+}
+```
+
+> Here is the response
+
+```json
+{
+    "@context": "http://grcschema.org/",
+    "@type": "Person",
+    "PhoneNumbers": {
+        "@type": "PhoneNumbers",
+        "@set": [
+            {
+                "@type": "PhoneNumber",
+                "id": 1197,
+                "phone_number": "623-555-1212",
+                "person_fk": 30863,
+                "organization_fk": null,
+                "primary": true
+            }
+        ]
+    },
+    "PersonRoles": {
+        "@type": "PersonRoles",
+        "@set": [
+            {
+                "@type": "PersonRole",
+                "id": 5,
+                "role_fk": 245,
+                "person_fk": 30863,
+                "name": "Chief Information Officer"
+            }
+        ]
+    },
+    "PostalAddresses": {
+        "@type": "PostalAddresses",
+        "@set": [
+            {
+                "@type": "PostalAddress",
+                "id": 8304,
+                "address1": "123 West East Street",
+                "address2": "#107",
+                "city": "Phoenix",
+                "state_territory_province": null,
+                "postal_code": "85340",
+                "country": "United States of America",
+                "country_code": "USA",
+                "person_fk": 30863,
+                "organization_fk": null,
+                "primary": false,
+                "local_reference_id": "postal-1"
+            }
+        ]
+    },
+    "SocialAddresses": {
+        "@type": "SocialAddresses",
+        "twitter": null,
+        "facebook": null,
+        "linkedin": null,
+        "youtube": null
+    },
+    "CoreMetaData": {
+        "@type": "CoreMetaData",
+        "date_created": "2021-03-03",
+        "date_modified": "2021-03-03",
+        "created_audit_id": 171,
+        "modified_audit_id": 172,
+        "live_status": 1,
+        "checksum": 0,
+        "validated": true,
+        "deprecated_notes": null,
+        "superceded_by": null
+    },
+    "PersonMemberships": {
+        "@type": "PersonMemberships",
+        "PersonOrganizations": {
+            "@type": "PersonOrganizations",
+            "@set": [
+                {
+                    "@type": "PersonOrganization",
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "organization_fk": null
+                }
+            ]
+        },
+        "PersonGroups": {
+            "@type": "PersonGroups",
+            "@set": [
+                {
+                    "@type": "PersonGroup",
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "group_fk": null
+                }
+            ]
+        },
+        "PersonInitiatives": {
+            "@type": "PersonInitiatives",
+            "@set": [
+                {
+                    "@type": "PersonInitiative",
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "initiative": null
+                }
+            ]
+        },
+        "PersonTeams": {
+            "@type": "PersonTeams",
+            "@set": [
+                {
+                    "@type": "PersonTeam",
+                    "name": null,
+                    "id": null,
+                    "person_fk": null,
+                    "team_fk": null
+                }
+            ]
+        }
+    },
+    "Emails": {
+        "@type": "Emails",
+        "@set": [
+            {
+                "@type": "Email",
+                "id": 610,
+                "email": "jsmith@no-reply.org",
+                "person_fk": 30863,
+                "organization_fk": null,
+                "primary": true,
                 "local_reference_id": null
             }
         ]
@@ -468,21 +649,22 @@
         "@set": [
             {
                 "@type": "Name",
-                "id": 650,
+                "id": 689,
                 "first_name": "John",
                 "last_name": "Smith",
                 "name_prefix_fk": null,
                 "name_suffix_fk": null,
-                "person_fk": 30825,
+                "freeform_name": null,
+                "person_fk": 30863,
                 "middle_initial": null,
-                "primary": 1,
-                "local_reference_id": null
+                "primary": true,
+                "local_reference_id": "name-1"
             }
         ]
     },
     "email": "jsmith@no-reply.org",
     "fullname": "John Smith",
-    "id": 30825
+    "id": 30863
 }
 ```
 
@@ -490,7 +672,7 @@
 
 * Updating @set objects have **three** special rules.
 * Add a new sub-object by supplying data to any property in any number of objects of @type while leaving the id and fk parameters **null**.
-* Change a sub-object instance by changing the property \(or properties\) without modifying the id or fk fields.
+* Change a sub-object instance by changing the property (or properties) without modifying the id or fk fields.
 * Remove a sub-object instance by removing all the properties except for **@type** and **id**.
 
 ### Adding a Sub-Object
@@ -504,21 +686,32 @@
     "@set": [
         {
             "@type": "Email",
+            "id": 610,
+            "email": "jsmith@no-reply.org",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": true
+        },
+        {
+            "@type": "Email",
             "email": "joe@personal-noreply.com",
             "id": null,
-            "person_fk": null
+            "person_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
             "email": "jsmith@compliance-noreply.com",
             "id": null,
-            "person_fk": null
+            "person_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
             "email": "js@compliance-noreply.com",
             "id": null,
-            "person_fk": null
+            "person_fk": null,
+            "primary": false
         }
     ]
 },
@@ -536,21 +729,35 @@
     "@set": [
         {
             "@type": "Email",
-            "id": 256,
+            "id": 610,
+            "email": "jsmith@no-reply.org",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": true
+        },
+        {
+            "@type": "Email",
+            "id": 612,
             "email": "joe@personal-noreply.com",
-            "person_fk": 30711
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
-            "id": 257,
+            "id": 613,
             "email": "jsmithCHANGED@compliance-noreply.com",
-            "person_fk": 30711
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
-            "id": 258,
+            "id": 614,
             "email": "js@compliance-noreply.com",
-            "person_fk": 30711
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         }
     ]
 },
@@ -559,7 +766,7 @@
 
 ### Removing a Sub-Object
 
-> In this example, the sub-object with `id 258` is deleted by removing the properties and the full Person object is returned with the requested change.
+> In this example, the sub-object with `id 614` is deleted by removing the properties and the full Person object is returned with the requested change.
 
 ```javascript
 ...
@@ -568,19 +775,31 @@
     "@set": [
         {
             "@type": "Email",
-            "id": 256,
+            "id": 610,
+            "email": "jsmith@no-reply.org",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": true
+        },
+        {
+            "@type": "Email",
+            "id": 612,
             "email": "joe@personal-noreply.com",
-            "person_fk": 30711
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
-            "id": 257,
-            "email": "jsmith@compliance-noreply.com",
-            "person_fk": 30711
+            "id": 613,
+            "email": "jsmithCHANGED@compliance-noreply.com",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
-            "id": 258
+            "id": 614
         }
     ]
 },
@@ -591,7 +810,7 @@
 
 > Note it is possible to add, change, and delete all at the same time and in any order and the full Person object is returned with the requested changes.
 >
-> In this example `id 256` is changed, `id 257` is deleted, and a `new record` is added.
+> In this example `id 613` is changed, `id 612` is deleted, and a `new record` is added.
 
 ```javascript
 ...
@@ -600,19 +819,31 @@
     "@set": [
         {
             "@type": "Email",
-            "id": 256,
-            "email": "joeCHANGE2@personal-noreply.com",
-            "person_fk": 30711
+            "id": 610,
+            "email": "jsmith@no-reply.org",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": true
         },
         {
             "@type": "Email",
-            "id": 257
+            "id": 612
+        },
+        {
+            "@type": "Email",
+            "id": 613,
+            "email": "jsmithCHANGED2@compliance-noreply.com",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         },
         {
             "@type": "Email",
             "id": null,
-            "email": "jsmith-NEW@compliance-noreply.com",
-            "person_fk": null
+            "email": "jsmithNEW@compliance-noreply.com",
+            "person_fk": 30863,
+            "organization_fk": null,
+            "primary": false
         }
     ]
 },
@@ -627,12 +858,12 @@
 
 ### Quick-start Knowledge
 
-* For `POST` and `PATCH` operations, you may send an optional `local_reference_id` for the core object and any sub-objects in unordered lists \(@set arrays\).  This `local_reference_id` will be returned \(like an echo\) for that object.
+* For `POST` and `PATCH` operations, you may send an optional `local_reference_id` for the core object and any sub-objects in unordered lists (@set arrays).  This `local_reference_id` will be returned (like an echo) for that object.
 * It is recommended you use a Type 4 UUID which is unique for that object in your system and tie the federated ID to your record for later use in querying the federated system for that object.
 
 ### POST Operation Example
 
-> For the core object, you may place a `local_reference_id` at the object root level, and it will be returned in the response. Do not add `local_reference_id` to the container objects like PersonName. For sub-object, unordered lists \(@set arrays\), you may place a `local_reference_id` in each object, and it will be returned to you in the response.
+> For the core object, you may place a `local_reference_id` at the object root level, and it will be returned in the response. Do not add `local_reference_id` to the container objects like PersonName. For sub-object, unordered lists (@set arrays), you may place a `local_reference_id` in each object, and it will be returned to you in the response.
 
 **SEND**
 
@@ -675,7 +906,7 @@
 }
 ```
 
-**RESPONSE \(Abbreviated\)**
+**RESPONSE (Abbreviated)**
 
 ```javascript
 {
@@ -735,7 +966,7 @@
 }
 ```
 
-> For sub-object, unordered lists \(@set arrays\), you may place a `local_reference_id` in each object, and it will be returned to you in the response.  
+> For sub-object, unordered lists (@set arrays), you may place a `local_reference_id` in each object, and it will be returned to you in the response.  
 > Note: When a `local_reference_id` is used during delete operation, the object will be returned with no properties but with your `local_reference_id` denoting the object was deleted. If you do not require a returned object denoting the deletion, do not send the `local_reference_id` key and value.
 
 **SEND**
@@ -799,4 +1030,3 @@
 },
 ...
 ```
-
