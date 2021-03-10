@@ -19,7 +19,7 @@ The schema for an account is found in multiple locations:
 
 The ERD for an account looks like this:
 
-![Account ERD](../../.gitbook/assets/0%20%284%29.png)
+![Account ERD](../../../.gitbook/assets/0%20%284%29.png)
 
 ### Necessary data
 
@@ -47,9 +47,9 @@ An initial welcome page will be displayed, such as the one that follows. It _mig
 
 ![Graphical user interface, text, application, email
 
-Description automatically generated](../../.gitbook/assets/1%20%283%29.png) ![Graphical user interface, text, application
+Description automatically generated](../../../.gitbook/assets/1%20%283%29.png) ![Graphical user interface, text, application
 
-Description automatically generated](../../.gitbook/assets/2%20%283%29.png)
+Description automatically generated](../../../.gitbook/assets/2%20%283%29.png)
 
 Welcome page with popovers \(right\)
 
@@ -66,7 +66,7 @@ In either case, these are the key data elements that need to be captured:
 2. The administrator’s corporate email address.
 3. _If_ using the Federated Mapping User store, the desired password. OR we need them to use an auth0 authentication process.
 
-![Gathering initial information](../../.gitbook/assets/3%20%283%29.png)
+![Gathering initial information](../../../.gitbook/assets/3%20%283%29.png)
 
 Whether using the Federated Mapping User store or an auth0 User store, the sign-up/sign in information must also be transferred into the Account information. We’ll cover that under the section about **signup sequence** below.
 
@@ -74,7 +74,7 @@ Whether using the Federated Mapping User store or an auth0 User store, the sign-
 
 We’ve separated the account’s Rapid API Key from the signup/sign in information in our diagrams. At this point we ask the user to enter their Rapid API key and we give them the URL for obtaining one if they don’t have it. **The signup process cannot continue without a valid key** \(which means you might want to write a short test of any kind to ensure valid data comes back\).
 
-![Entering the Rapid API key](../../.gitbook/assets/4%20%283%29.png)
+![Entering the Rapid API key](../../../.gitbook/assets/4%20%283%29.png)
 
 ## Sign-up Page 3a&b
 
@@ -85,9 +85,9 @@ Once we have the administrator’s personal information, we need to get informat
 
 ![Graphical user interface, text, application
 
-Description automatically generated](../../.gitbook/assets/5%20%282%29.png) ![Graphical user interface, text, application
+Description automatically generated](../../../.gitbook/assets/5%20%282%29.png) ![Graphical user interface, text, application
 
-Description automatically generated](../../.gitbook/assets/6.png)
+Description automatically generated](../../../.gitbook/assets/6.png)
 
 An organization was found \(left\) or not found and needs to be created \(right\)
 
@@ -95,7 +95,7 @@ An organization was found \(left\) or not found and needs to be created \(right\
 
 The sign-up sequence for a new account is a bit involved. The reason for this is that records of _any kind_ being added to the federated database are audited and require a _live_ userid for a POST or PATCH. Add to that, organizational domains are _unique_ in the system – they can be added, and attributed to only _one_ organization. Therefore, once an organization is added, every user with the same email domain will be added _to that organization_. Likewise, every federated Group and Initiative will be added to that organization. And in that light, each account \(even though it will be local to the host creating it\) is also added to that organization. Here is the sequence of events for registering a new account \(and thus, a new administrator\).
 
-![New Account Sequence](../../.gitbook/assets/7.png)
+![New Account Sequence](../../../.gitbook/assets/7.png)
 
 1. The user adds the administrator’s name information to the local system.
 
