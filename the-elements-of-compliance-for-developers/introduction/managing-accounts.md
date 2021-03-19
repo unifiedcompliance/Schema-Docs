@@ -25,7 +25,7 @@ Main navigation for accounts, organizations, groups, etc. is accessed by the Gro
 
 Within the Person section of the shell, sub-navigation must include capabilities to switch between _this_ account, _the account’s organization_, and all organizations \(2\).
 
-![Account subnavigation](../../.gitbook/assets/1%20%286%29.png)
+![Account subnavigation](../../.gitbook/assets/1%20%287%29.png)
 
 ## Basic Info
 
@@ -37,11 +37,15 @@ Basic information for the account isn’t much. Just the account name \(which sh
 
 An account can only be deleted once _all_ of the members of the account have been deleted _except_ for the administrator. Once the account has been deleted, the administrator of the account will also be deleted.
 
+Therefore, if there are still members of the account that are active, a dialog should warn the administrator that the users will be deleted _only after notifying the users_ that they will be deleted so that those users can approve or disapprove their deletion.
+
+If _any_ user disapproves of being deleted, the _account cannot be deleted_.
+
 ## Postal Addresses
 
 The primary postal address was already created during the sign-up process. It can be changed here, as well as any additional addresses can be added here.
 
-![Postal addresses](../../.gitbook/assets/3%20%286%29.png)
+![Postal addresses](../../.gitbook/assets/3%20%287%29.png)
 
 When filled out, they must be filled out in the order of _country_, _state_, _city_, and then the rest of the information. This is because _country_, _state_, and _city_ are all pop-ups, one deriving its list from the other.
 
