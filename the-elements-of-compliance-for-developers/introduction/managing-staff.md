@@ -19,7 +19,7 @@ The schema for an account is found in multiple locations:
 
 The ERD for working with staff looks like the diagram that follows:
 
-![Staff ERD](../../.gitbook/assets/0%20%287%29.png)
+![Staff ERD](../../.gitbook/assets/0%20%288%29.png)
 
 ## Navigation
 
@@ -27,13 +27,13 @@ Main navigation for Staff is accessed by the Person icon \(1\) as shown in the f
 
 Within the Person section of the shell, sub-navigation must include capabilities to switch between _Staff_, _Contributors_, and _Reports_ as shown in \(2\) within the following diagram.
 
-![Sub navigation](../../.gitbook/assets/1%20%285%29.png)
+![Sub navigation](../../.gitbook/assets/1%20%286%29.png)
 
 ## Basic Info
 
 Basic information for each staff member comprises their primary name & email address \(mandatory\), and optional social addresses. The suggested layout for basic information follows:
 
-![Staff Basic Info](../../.gitbook/assets/2%20%287%29.png)
+![Staff Basic Info](../../.gitbook/assets/2%20%288%29.png)
 
 1. Navigation must be available for all staff members. In this example we’ve doubled navigation with the ability to add new staff members \(by entering them into the last blank field\) or deleting them through the minus “-“ button.
 
@@ -78,7 +78,7 @@ Therefore, two things must happen.
 
 a. The organization should establish a standard name configuration system for creating system names. The basic system can be as simple as the “name configurator” shown below:
 
-![](../../.gitbook/assets/3%20%286%29.png)
+![](../../.gitbook/assets/3%20%287%29.png)
 
 Sample name configurator
 
@@ -90,7 +90,7 @@ b. The name configuration standard _could_ produce duplicate results. Therefore,
 
 Staff names is an array of names. The person’s _primary_ name can be set from here or on the Basic Info layout.
 
-![Staff Names](../../.gitbook/assets/4%20%285%29.png)
+![Staff Names](../../.gitbook/assets/4%20%286%29.png)
 
 For all names, the First Name and the Last Name must be filled out.
 
@@ -100,7 +100,7 @@ There is a bit of a trick to this layout – a person’s name can either be in 
 
 There is a bit of a trick to this layout, as mentioned in Staff Names above. This layout is _only_ for names records that _only_ have the freeform\_name field filled out.
 
-![Aliases](../../.gitbook/assets/5%20%284%29.png)
+![Aliases](../../.gitbook/assets/5%20%285%29.png)
 
 1. This is the freeform name. The **Disambiguated System Name** is _always_ entered as a record for this user.
 
@@ -114,7 +114,7 @@ There is a bit of a trick to this layout, as mentioned in Staff Names above. Thi
 
 These are both arrays assigned to a staff member. Other than the primary email address, they are optional.
 
-![Emails &amp; Phone Numbers](../../.gitbook/assets/6%20%282%29.png)
+![Emails &amp; Phone Numbers](../../.gitbook/assets/6%20%283%29.png)
 
 The _calling codes_ for phone numbers can be automatically created using the callingcodes schema and API calls.
 
