@@ -19,7 +19,7 @@ The schema for an account is found in multiple locations:
 
 The ERD for working with staff looks like the diagram that follows:
 
-![Staff ERD](../../.gitbook/assets/0%20%286%29.png)
+![Staff ERD](../../.gitbook/assets/0%20%287%29.png)
 
 ## Navigation
 
@@ -33,7 +33,7 @@ Within the Person section of the shell, sub-navigation must include capabilities
 
 Basic information for each staff member comprises their primary name & email address \(mandatory\), and optional social addresses. The suggested layout for basic information follows:
 
-![Staff Basic Info](../../.gitbook/assets/2%20%285%29.png)
+![Staff Basic Info](../../.gitbook/assets/2%20%286%29.png)
 
 1. Navigation must be available for all staff members. In this example we’ve doubled navigation with the ability to add new staff members \(by entering them into the last blank field\) or deleting them through the minus “-“ button.
 
@@ -90,7 +90,7 @@ b. The name configuration standard _could_ produce duplicate results. Therefore,
 
 Staff names is an array of names. The person’s _primary_ name can be set from here or on the Basic Info layout.
 
-![Staff Names](../../.gitbook/assets/4%20%284%29.png)
+![Staff Names](../../.gitbook/assets/4%20%285%29.png)
 
 For all names, the First Name and the Last Name must be filled out.
 
