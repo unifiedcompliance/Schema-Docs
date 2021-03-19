@@ -33,6 +33,10 @@ Basic information for the account isn’t much. Just the account name \(which sh
 
 ![Account Basic Info](../../.gitbook/assets/2%20%285%29.png)
 
+### Deleting the account
+
+An account can only be deleted once _all_ of the members of the account have been deleted _except_ for the administrator. Once the account has been deleted, the administrator of the account will also be deleted.
+
 ## Postal Addresses
 
 The primary postal address was already created during the sign-up process. It can be changed here, as well as any additional addresses can be added here.
