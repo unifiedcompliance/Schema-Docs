@@ -6,10 +6,6 @@
 
 ## Proposed Vocabulary
 
-* [Person Endpoints](proposed-vocabulary/person-endpoints.md)
-* [NameSuffix Endpoints](proposed-vocabulary/namesuffix-endpoints.md)
-* [NamePrefix Endpoints](proposed-vocabulary/nameprefix-endpoints.md)
-* [Organization Endpoints](proposed-vocabulary/organization-endpoints.md)
 * [AuditData Endpoints](proposed-vocabulary/audit-endpoints.md)
 * [Country Endpoints](proposed-vocabulary/country-endpoints.md)
 * [Currency Endpoints](proposed-vocabulary/currency-endpoints.md)
@@ -42,13 +38,17 @@
 
 ---
 
-* [§ 2 Schemas](2.-schemas/README.md)
+* [§ 2 Schemas & Endpoints](2.-schemas/README.md)
   * [Schemas harmonized in the Federated Compliance Mapping model](2.-schemas/2.1-schemas-harmonized-in-the-federated-compliance-mapping-model.md)
   * [Initial Schema analysis](2.-schemas/2.2-initial-schema-analysis.md)
   * [§ 2.1 Common Schema Elements](2.-schemas/2.3-shared-common-elements.md)
-  * [§ 2.2 Person Schema](2.-schemas/2.2-person-schema.md)
+  * [§ 2.2 Person Schema](2.-schemas/2.2-person-schema/README.md)
+    * [Person Endpoints](2.-schemas/2.2-person-schema/person-endpoints.md)
+    * [NamePrefix Endpoints](2.-schemas/2.2-person-schema/nameprefix-endpoints.md)
+    * [NameSuffix Endpoints](2.-schemas/2.2-person-schema/namesuffix-endpoints.md)
   * [§ 2.3 Role Schema](2.-schemas/role-schema.md)
-  * [§ 2.4 Organization, Group, and Initiative Schema](2.-schemas/organization-group-and-initiative-schema.md)
+  * [§ 2.4 Organization, Group, and Initiative Schema](2.-schemas/organization-group-and-initiative-schema/README.md)
+    * [Organization Endpoints](2.-schemas/organization-group-and-initiative-schema/organization-endpoints.md)
   * [§ 2.5 Authority Document Schema](2.-schemas/authority-document-schema.md)
 
 ## The Elements of Compliance for Developers

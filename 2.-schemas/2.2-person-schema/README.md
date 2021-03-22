@@ -100,7 +100,7 @@ There are over 20 organizations that have contributed schemas to the realm of Co
 
 StratML calls a natural person a **submitter**. Their data structure for submitter is relegated to a simple table for name, phone number, and email address, as shown below.
 
-![StratML](../.gitbook/assets/0.png)
+![StratML](../../.gitbook/assets/0.png)
 
 StratML has both a first name \(GivenName\) and last name \(Surname\), so this is easy to concatenate into a full name \(fullname\) in GRCSchema.
 
@@ -108,7 +108,7 @@ StratML has both a first name \(GivenName\) and last name \(Surname\), so this i
 
 OSCAL refers to a natural person as a **party**. In addition to name, phone, and email, they also include address, as shown below.
 
-![OSCAL](../.gitbook/assets/1%20%281%29.png)
+![OSCAL](../../.gitbook/assets/1%20%281%29.png)
 
 The problem with OSCAL, as you’ll see with some of the others, is that they only have a fully concatenated name. There doesn’t seem to be a way to discern first name and last name, let alone a person’s prefix, middle name, and suffix.
 
@@ -116,7 +116,7 @@ The problem with OSCAL, as you’ll see with some of the others, is that they on
 
 STIX’s schema for a **threat actor** is very minimal but includes one major distinction – _type_. STIX’s threat actor can be a natural person, agent, group, organization, or even nature. Hence _type_ is used to disambiguate between the various forms the threat actor can take.
 
-![STIX](../.gitbook/assets/2%20%281%29.png)
+![STIX](../../.gitbook/assets/2%20%281%29.png)
 
 STIX suffers the same single-field naming problem.
 
@@ -124,7 +124,7 @@ STIX suffers the same single-field naming problem.
 
 Cybox, incorporated into a great many of OASIS’ schemas, adds the addition of _role_ \(which we will cover in its own JSON Thing, later\) to its **contributor**.
 
-![Cybox](../.gitbook/assets/3%20%281%29.png)
+![Cybox](../../.gitbook/assets/3%20%281%29.png)
 
 Cybox suffers the same single-field naming problem.
 
@@ -132,7 +132,7 @@ Cybox suffers the same single-field naming problem.
 
 While ISO 19770-3 doesn’t come out and have a full-fledged person identity, they do deal with **trustdefinedbyname**.
 
-![ISO 19770-3](../.gitbook/assets/4%20%281%29.png)
+![ISO 19770-3](../../.gitbook/assets/4%20%281%29.png)
 
 ISO 19770-3 suffers the same single-field naming problem.
 

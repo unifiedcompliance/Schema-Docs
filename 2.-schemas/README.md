@@ -1,4 +1,4 @@
-# § 2 Schemas
+# § 2 Schemas & Endpoints
 
 The core data model for a federated compliance mapping schema is shown below:
 
