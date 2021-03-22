@@ -146,3 +146,12 @@ The sign-up sequence for a new account is a bit involved. The reason for this is
 
 17. The organization id is then added to the organization\_fk field in the Account table.
 
+### When finished
+
+Several key pieces of information need to be present: 
+
+1. the domain for the organization \(derived from the administrator’s email address\);
+2. the name of the organization, and the name of the account \(both can be the same\);
+3. the administrator’s contact information; and
+4. the Rapid API key.
+
