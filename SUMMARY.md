@@ -12,8 +12,6 @@
 * [Language Endpoints](proposed-vocabulary/language-endpoints.md)
 * [Character Endpoints](proposed-vocabulary/character-endpoints.md)
 * [Role Endpoints](proposed-vocabulary/role-endpoints.md)
-* [Group Endpoints](proposed-vocabulary/group-endpoints.md)
-* [Initiative Endpoints](proposed-vocabulary/initiative-endpoints.md)
 * [AuthorityDocument Endpoints](proposed-vocabulary/authoritydocument-endpoints.md)
 
 ## Accepted Vocabulary
@@ -49,6 +47,8 @@
   * [§ 2.3 Role Schema](2.-schemas/role-schema.md)
   * [§ 2.4 Organization, Group, and Initiative Schema](2.-schemas/organization-group-and-initiative-schema/README.md)
     * [Organization Endpoints](2.-schemas/organization-group-and-initiative-schema/organization-endpoints.md)
+    * [Group Endpoints](2.-schemas/organization-group-and-initiative-schema/group-endpoints.md)
+    * [Initiative Endpoints](2.-schemas/organization-group-and-initiative-schema/initiative-endpoints.md)
   * [§ 2.5 Authority Document Schema](2.-schemas/authority-document-schema.md)
 
 ## The Elements of Compliance for Developers
