@@ -1,6 +1,8 @@
 # The Shell application
 
-The public sharing for these wireframes is: [https://balsamiq.cloud/srj76i4/p3l8wr](https://balsamiq.cloud/srj76i4/p3l8wr)
+The public sharing for these wireframes is: [https://balsamiq.cloud/srj76i4/p3l8wr](https://balsamiq.cloud/srj76i4/p3l8wr).
+
+While these are designed here in Balsamiq, we highly suggest that the components be translat-ed into Material-UI React components, found here: [https://react-material-kit.devias.io/browse](https://react-material-kit.devias.io/browse).
 
 The federated mapping application we describe utilizes a multi-tenant architecture. The shell that we’ve designed, is designed to fit within the confines of a laptop or an iPad Pro. As such, the _suggested_ window proportions are 1368 wide x 996 high. Below are basics for the window’s shell:
 
