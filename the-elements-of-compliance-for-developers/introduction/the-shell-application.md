@@ -18,6 +18,16 @@ The federated mapping application we describe utilizes a multi-tenant architectu
 
 5. If there is pagination, the navigation for the pagination is shown on the bottom right.
 
+## Brand Colors
+
+Each client should have the capability of adding their logo and both primary and secondary colors, as shown below.
+
+![Basic shell with colors and logo placement](../../.gitbook/assets/image.png)
+
+1.  The clients should be able to upload their logo.
+2. The clients shuld be able to have a primary brand color used for highlighting, fonts, headlines, etc.
+3. A secondary color should also be choosable for the title bar.
+
 ## Basic Navigation
 
 Basic navigation in our demonstration file follows the same format we’ve designed for many of our websites, such as the [CommonControlsHub.com](https://cch.commoncontrolshub.com/) website.
