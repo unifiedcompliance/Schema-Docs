@@ -56,15 +56,24 @@ In either case, these are the key data elements that need to be captured:
 2. The administrator’s corporate email address.
 3. _If_ using the Federated Mapping User store, the desired password. OR we need them to use an auth0 authentication process.
 
-![Gathering initial information](../../../.gitbook/assets/3%20%283%29.png)
+![](../../../.gitbook/assets/sign-up-1.png)
 
 Whether using the Federated Mapping User store or an auth0 User store, the sign-up/sign in information must also be transferred into the Account information. We’ll cover that under the section about **signup sequence** below.
+
+## Sign-up 1 \(known organization\)
+
+During the sign-up process, if the user’s domain from their e-mail matches 
+
+* an existing organization’s domain 
+* that has an an existing account \(or multiple accounts\) attached to it then give the user the opportunity to join one of the existing accounts or continue to create a new account.
+
+![An organization with existing accounts was found](../../../.gitbook/assets/sign-up-known-organization.png)
 
 ## Sign-up Page 2
 
 We’ve separated the account’s Rapid API Key from the signup/sign in information in our diagrams. At this point we ask the user to enter their Rapid API key and we give them the URL for obtaining one if they don’t have it. **The signup process cannot continue without a valid key** \(which means you might want to write a short test of any kind to ensure valid data comes back\).
 
-![Entering the Rapid API key](../../../.gitbook/assets/4%20%283%29.png)
+![](../../../.gitbook/assets/sign-up-2.png)
 
 ## Sign-up Page 3a&b
 
@@ -75,9 +84,9 @@ Once we have the administrator’s personal information, we need to get informat
 
 ![Graphical user interface, text, application
 
-Description automatically generated](../../../.gitbook/assets/5%20%282%29.png) ![Graphical user interface, text, application
+Description automatically generated](../../../.gitbook/assets/sign-up-3-org-found.png) ![Graphical user interface, text, application
 
-Description automatically generated](../../../.gitbook/assets/6.png)
+Description automatically generated](../../../.gitbook/assets/sign-up-3-unique-org.png)
 
 An organization was found \(left\) or not found and needs to be created \(right\)
 
