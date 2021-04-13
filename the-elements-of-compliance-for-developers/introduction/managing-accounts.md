@@ -19,6 +19,14 @@ The ERD for working with an account looks like the diagram that follows:
 
 ![Account ERD](../../.gitbook/assets/0%20%286%29.png)
 
+### What needs to be understood about this structure
+
+Organizations exist outside of Accounts. When you think of an organization, think of, say, IBM. It exists whether IBM has an account within this system or not. 
+
+Then, when someone that has _ibm.com_ in their email address wishes to establish an Account in the system, they can do so, and it is tied to the IBM Organization. And then another person with _ibm.com_ in their email address might want to establish a _different_ account – they can do so – and _that account_, _too_, will be linked to the IBM Organization. 
+
+Both accounts are tied to the IBM Organization through the domain in their email addresses. Each Account can have its own, private, Groups and Initiatives. As well as its own addresses and phone numbers, not directly associated with the formal addresses associated with the Organization.
+
 ## Navigation
 
 Main navigation for accounts, organizations, groups, etc. is accessed by the Group icon \(1\) as shown in the following diagram.
