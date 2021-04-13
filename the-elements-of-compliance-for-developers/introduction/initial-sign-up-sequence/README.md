@@ -41,17 +41,7 @@ Billing contact information \(name, address, email\)
 
 Shipping information \(address\)
 
-## Welcome page
 
-An initial welcome page will be displayed, such as the one that follows. It _might_ be helpful to show the left main navigation with popovers showing prospective users what each of the icons represent and why they could be important to the user.
-
-![Graphical user interface, text, application, email
-
-Description automatically generated](../../../.gitbook/assets/1%20%283%29.png) ![Graphical user interface, text, application
-
-Description automatically generated](../../../.gitbook/assets/2%20%283%29.png)
-
-Welcome page with popovers \(right\)
 
 ## Sign-up Page 1
 
