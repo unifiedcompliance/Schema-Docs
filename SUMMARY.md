@@ -55,6 +55,7 @@
 
 * [Sample Application\(s\)](the-elements-of-compliance-for-developers/introduction/README.md)
   * [The Shell application](the-elements-of-compliance-for-developers/introduction/the-shell-application.md)
+  * [Standardized Elements](the-elements-of-compliance-for-developers/introduction/standardized-elements.md)
   * [Home Page](the-elements-of-compliance-for-developers/introduction/home-page.md)
   * [Log In](the-elements-of-compliance-for-developers/introduction/log-in.md)
   * [Initial Sign-up sequence](the-elements-of-compliance-for-developers/introduction/initial-sign-up-sequence/README.md)
