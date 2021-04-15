@@ -28,3 +28,11 @@ Any time a record is being created or modified, the system must check for requir
 
 Along with that, the field\(s\) in question will be highlighted in red to give the end users another visual presentation of which field\(s\) need to be reviewed.
 
+## Standardized Addition of Records to an Array
+
+There are many ways to add a standardized method of handling new records in an array. One of them is proposed below. This method is to show an additional record below the record set \(or above it\) with appropriate text prompts to show the user that this is where they enter new records for the array. For these records, the delete button is grayed out as an additional visual indication of this being a placeholder for new records.
+
+![Standardized New Record in an array](../../.gitbook/assets/image%20%281%29.png)
+
+Once the user has entered information into the new record in the array, and clicked Save, the delete button becomes an active button and a new blank in the array is presented.
+
