@@ -60,7 +60,6 @@
   * [Log In](the-elements-of-compliance-for-developers/introduction/log-in.md)
   * [Initial Sign-up sequence](the-elements-of-compliance-for-developers/introduction/initial-sign-up-sequence/README.md)
     * [Completing the Sign-up](the-elements-of-compliance-for-developers/introduction/initial-sign-up-sequence/completing-the-sign-up.md)
-  * [Managing Staff](the-elements-of-compliance-for-developers/introduction/managing-staff.md)
   * [Managing Accounts](the-elements-of-compliance-for-developers/introduction/managing-accounts.md)
   * [Managing Organizations](the-elements-of-compliance-for-developers/introduction/managing-organizations.md)
   * [Managing Groups](the-elements-of-compliance-for-developers/introduction/managing-groups.md)

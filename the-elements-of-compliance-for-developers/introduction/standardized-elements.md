@@ -12,13 +12,13 @@ The items presented here are used and re-used throughout the system, and therefo
 
 A small, colorized right-facing arrow \(\) indicates a hyperlink to the related record it is on. Large, colorized minus \(-\) and plus \(+\) signs appearing next to each other indicate that the record in question can be deleted \(minus, -\) or a new record can be added \(plus, +\).
 
-![Jump-to \(left\) and delete/add records \(right\)](../../.gitbook/assets/0%20%2813%29.png)
+![Jump-to \(left\) and delete/add records \(right\)](../../.gitbook/assets/0%20%2814%29.png)
 
 ## Standardized deletion message
 
 When a record is being deleted, prior to deletion a standardized dialog will appear double-checking with the end user to determine if the record should _really_ be deleted.
 
-![Standardized deletion dialog](../../.gitbook/assets/1%20%2810%29.png)
+![Standardized deletion dialog](../../.gitbook/assets/1%20%2811%29.png)
 
 ## Standardized Required Field error message
 
