@@ -12,7 +12,7 @@ The items presented here are used and re-used throughout the system, and therefo
 
 A small, colorized right-facing arrow \(\) indicates a hyperlink to the related record it is on. Large, colorized minus \(-\) and plus \(+\) signs appearing next to each other indicate that the record in question can be deleted \(minus, -\) or a new record can be added \(plus, +\).
 
-![Jump-to \(left\) and delete/add records \(right\)](../../.gitbook/assets/0%20%2814%29.png)
+![Standardized jump-to and add/delete buttons](../../.gitbook/assets/standardized-jump-to-and-add-delete.png)
 
 ## Standardized deletion message
 
