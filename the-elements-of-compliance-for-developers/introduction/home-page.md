@@ -16,5 +16,5 @@ We don’t have much for the design of the home page, other than that it should 
 
 Somehow we should communicate to those _not_ signed up, what all of the logos mean and how much _depth of information and assistance_ there is on the site. One way to possibly do this would be to have a roll-over of information available for each icon, as shown below.
 
-![More info](../../.gitbook/assets/1%20%2813%29.png)
+![More info](../../.gitbook/assets/1%20%2814%29.png)
 
