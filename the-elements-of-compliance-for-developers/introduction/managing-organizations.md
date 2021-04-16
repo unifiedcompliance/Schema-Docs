@@ -50,7 +50,7 @@ For _now_, classification is automatically applied via the returned information 
 
 _Some_ information about social addresses will be returned by Clearbit and others. The rest can be added manually.
 
-![Social Information](../../.gitbook/assets/4%20%2811%29.png)
+![Social Information](../../.gitbook/assets/4%20%2812%29.png)
 
 1. **Email Addresses** – only addresses _from the same domain as the organization, or those in the domains list_ can be added to the Email Address array. They can be removed at will.
 
@@ -78,5 +78,5 @@ When filled out, they must be filled out in the order of _country_, _state_, _ci
 
 This is a listing of members. Members are added/managed through the Staff layout. Members can be navigated to by clicking on their name.
 
-![Members](../../.gitbook/assets/6%20%285%29.png)
+![Members](../../.gitbook/assets/6%20%286%29.png)
 

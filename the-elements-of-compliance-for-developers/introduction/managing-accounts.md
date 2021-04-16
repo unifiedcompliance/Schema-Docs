@@ -35,13 +35,13 @@ Navigation to the Account is accessed through the **Account Settings** icon at t
 
 Within the Account section of the shell, sub-navigation must include capabilities to switch between _this_ account, _the account’s organization_, other subnavigation items associated with the account.
 
-![Account subnavigation](../../.gitbook/assets/2%20%2813%29.png)
+![Account subnavigation](../../.gitbook/assets/2%20%2814%29.png)
 
 ## Basic Info
 
 Basic information for the account isn’t much. Just the account name \(which should already exist\), the meta data \(which also should exist\), and the optional description and telephone numbers.
 
-![Account Basic Info](../../.gitbook/assets/3%20%2812%29.png)
+![Account Basic Info](../../.gitbook/assets/3%20%2813%29.png)
 
 ### Adding and deleting telephone numbers
 
@@ -71,7 +71,7 @@ When filled out, they must be filled out in the order of _country_, _state_, _ci
 
 This is a listing of members. Members are added/managed through the Account Users layout. Members can be navigated to by clicking on arrow by their name.
 
-![Members](../../.gitbook/assets/7%20%282%29.png)
+![Members](../../.gitbook/assets/7%20%283%29.png)
 
 ## Account Groups
 

@@ -63,4 +63,5 @@
   * [Managing Accounts](the-elements-of-compliance-for-developers/introduction/managing-accounts.md)
   * [Managing Organizations](the-elements-of-compliance-for-developers/introduction/managing-organizations.md)
   * [Managing Groups](the-elements-of-compliance-for-developers/introduction/managing-groups.md)
+  * [Managing Persons](the-elements-of-compliance-for-developers/introduction/managing-persons.md)
 

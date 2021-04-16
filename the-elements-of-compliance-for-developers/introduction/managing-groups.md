@@ -85,5 +85,5 @@ When filled out, they must be filled out in the order of _country_, _state_, _ci
 
 This is a listing of members. Members are added/managed through the Staff layout. Members can be navigated to by clicking on their name.
 
-![Members](../../.gitbook/assets/6%20%286%29.png)
+![Members](../../.gitbook/assets/6%20%287%29.png)
 
