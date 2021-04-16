@@ -35,13 +35,13 @@ Navigation to the Account is accessed through the **Account Settings** icon at t
 
 Within the Account section of the shell, sub-navigation must include capabilities to switch between _this_ account, _the account’s organization_, other subnavigation items associated with the account.
 
-![Account subnavigation](../../.gitbook/assets/2%20%2812%29.png)
+![Account subnavigation](../../.gitbook/assets/2%20%2813%29.png)
 
 ## Basic Info
 
 Basic information for the account isn’t much. Just the account name \(which should already exist\), the meta data \(which also should exist\), and the optional description and telephone numbers.
 
-![Account Basic Info](../../.gitbook/assets/3%20%2811%29.png)
+![Account Basic Info](../../.gitbook/assets/3%20%2812%29.png)
 
 ### Adding and deleting telephone numbers
 
@@ -51,7 +51,7 @@ Adding a new telephone number brings up a modal dialog prompting the user to ent
 
 Deleting a telephone number brings up a dialog to ensure that the deletion request wasn’t a mistake.
 
-![Delete telephone number](../../.gitbook/assets/5%20%286%29.png)
+![Delete telephone number](../../.gitbook/assets/5%20%287%29.png)
 
 ## Postal Addresses
 

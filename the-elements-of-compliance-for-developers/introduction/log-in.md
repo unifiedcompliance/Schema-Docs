@@ -27,5 +27,5 @@ Log In information is a combination of two screens, log in and forgot password.
 
 If the user cannot remember their password, they can click a link, provide their email address, and _if that address exists_, can be sent an email to reset their password.
 
-![Password recovery](../../.gitbook/assets/1%20%2812%29.png)
+![Password recovery](../../.gitbook/assets/1%20%2813%29.png)
 

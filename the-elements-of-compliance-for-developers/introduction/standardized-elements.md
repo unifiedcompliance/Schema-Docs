@@ -18,7 +18,7 @@ A small, colorized right-facing arrow \(\) indicates a hyperlink to the related 
 
 When a record is being deleted, prior to deletion a standardized dialog will appear double-checking with the end user to determine if the record should _really_ be deleted.
 
-![Standardized deletion dialog](../../.gitbook/assets/1%20%2811%29.png)
+![Standardized deletion dialog](../../.gitbook/assets/1%20%2812%29.png)
 
 ## Standardized Required Field error message
 
