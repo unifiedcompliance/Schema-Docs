@@ -6,7 +6,7 @@
 
 ## Proposed Vocabulary
 
-* [AuditData Endpoints](proposed-vocabulary/audit-endpoints.md)
+* [ChangeHistory Endpoints](proposed-vocabulary/audit-endpoints.md)
 * [Country Endpoints](proposed-vocabulary/country-endpoints.md)
 * [Currency Endpoints](proposed-vocabulary/currency-endpoints.md)
 * [Language Endpoints](proposed-vocabulary/language-endpoints.md)

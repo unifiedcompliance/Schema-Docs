@@ -38,7 +38,7 @@ Once the user has entered information into the new record in the array, and clic
 
 ## Change synchronization
 
-AuditData is a key element in managing federated information. In short, the two main objects within AuditData are current\_object and previous\_object which store exactly what they say – a snapshot of the current state of the record and the previous state of the record.
+ChangeHistory is a key element in managing federated information. In short, the two main objects within ChangeHistory are current\_object and previous\_object which store exactly what they say – a snapshot of the current state of the record and the previous state of the record.
 
 In order to accept the changes between the federated system and the local system, the end user must be presented with a method by which to do so. The easiest way is to display a listing of all of the changed fields within the given record and allow the user to either accept all of them or to accept individual changes.
 
