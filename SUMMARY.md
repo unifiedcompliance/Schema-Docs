@@ -6,7 +6,6 @@
 
 ## Proposed Vocabulary
 
-* [ChangeHistory Endpoints](proposed-vocabulary/audit-endpoints.md)
 * [Country Endpoints](proposed-vocabulary/country-endpoints.md)
 * [Currency Endpoints](proposed-vocabulary/currency-endpoints.md)
 * [Language Endpoints](proposed-vocabulary/language-endpoints.md)
@@ -55,7 +54,8 @@
 
 * [Sample Application\(s\)](the-elements-of-compliance-for-developers/introduction/README.md)
   * [The Shell application](the-elements-of-compliance-for-developers/introduction/the-shell-application.md)
-  * [Standardized Elements](the-elements-of-compliance-for-developers/introduction/standardized-elements.md)
+  * [Standardized Elements](the-elements-of-compliance-for-developers/introduction/standardized-elements/README.md)
+    * [ChangeHistory Endpoints](the-elements-of-compliance-for-developers/introduction/standardized-elements/audit-endpoints.md)
   * [Home Page](the-elements-of-compliance-for-developers/introduction/home-page.md)
   * [Log In](the-elements-of-compliance-for-developers/introduction/log-in.md)
   * [Initial Sign-up sequence](the-elements-of-compliance-for-developers/introduction/initial-sign-up-sequence/README.md)
