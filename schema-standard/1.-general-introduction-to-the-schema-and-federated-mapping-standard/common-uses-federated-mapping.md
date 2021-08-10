@@ -45,6 +45,15 @@ The US Department of Defense Control Correlation Identifier \(CCI\) provides a s
 
 [https://theucf.info/schemas-CCI](https://theucf.info/schemas-CCI)
 
+### Credential Transparency Description Langauge \(CTDL\)
+
+The CTDL family of specifications is intended to describe "things" such as a Credential, Organization, Assessment, Learning Opportunity, Competency, and so on. The CTDL is designed to enable:
+
+1. Creation of simple descriptions and to serve as a basis for website markup; and
+2. Rich descriptions to support fairly refined comparisons among credentials.
+
+[https://theucf.info/schemas-CDTL](https://theucf.info/schemas-CDTL)
+
 ### Derived Relationship Mapping \(DRM\)
 
 The NIST Derived Relationship Mapping \(DRM\) is a Software as a Service, JSON structure, and methodology for mapping various Authority Documents \(they call them reference documents\) to NIST’s reference framework \(they call it the Focal Document\). The Analysis Tool provides users the ability to generate DRMs for Reference Documents with the Cybersecurity Framework as the Focal Document. The DRMs are non-authoritative and represent a starting point when attempting to compare Reference Documents[\[9\]](). Sections 3.3 – 3.5 of NIST Interagency Report \(IR\) 8278, National Cybersecurity OLIR Program: Guidelines for OLIR Users and Developers for additional guidance around understanding and utilizing Derived Relationship Maps[\[10\]]().
@@ -92,6 +101,18 @@ Open Policy Agent is a project that started in 2016 aimed at unifying policy enf
 NIST, in collaboration with industry, is developing the Open Security Controls Assessment Language \(OSCAL\). OSCAL is a set of formats expressed in XML, JSON, and YAML. These formats provide machine-readable representations of control catalogs, control baselines, system security plans, and assessment plans and results. The Federal Risk and Authorization Management program \(FedRAMP\) office within the General Services Administration, began partnering with NIST on OSCAL in 2019[\[20\]]() to develop machine readable System Security Plans \(SSPs\)[\[21\]]() so that machine readability can be applied to the publication, implementation, and assessment of security controls.
 
 [https://theucf.info/schemas-OSCAL](https://theucf.info/schemas-OSCAL)
+
+### ReSpec
+
+ReSpec makes it easier to write technical documents. It was originally designed for writing W3C specifications, but now supports many output formats. A ReSpec document can be stored as JSON or rendered as an HTML document that brings in the ReSpec script, defines a few configuration variables, and follows a few conventions.
+
+[https://theucf.info/schemas-RecSpec](https://theucf.info/schemas-RecSpec)
+
+### Rich Skill Descriptors
+
+In order to create an ecosystem of recognition around skills, where Achievements, Pathways, and Learner Records make machine-readable references to skills and allow systems to take action based on the skills learners hold, it is important for implementers to use skills in common ways. RSDs build on [CTDL-ASN](https://credreg.net/ctdl/handbook#ctdlasnschema) to enable skill authors to publish definitions that can be referenced from digital credentials \(including those that appear in learner records\), pathways, and job profiles.
+
+[https://theucf.info/schemas-RSD](https://theucf.info/schemas-RSD)
 
 ### Software Identification \(SWID\) Tags
 
