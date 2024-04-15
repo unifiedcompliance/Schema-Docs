@@ -14,29 +14,29 @@ The schema for a group is listed here: [http://grcschema.org/Group](http://grcsc
 
 The ERD for working with a group looks like the diagram that follows:
 
-![Group ERD](../../.gitbook/assets/0%20%2814%29.png)
+![Group ERD](<../../.gitbook/assets/0 (5).png>)
 
 ## Navigation
 
-Main navigation for group is accessed _below_ the group icon \(1\) as shown in the following diagram.
+Main navigation for group is accessed _below_ the group icon (1) as shown in the following diagram.
 
-![Group subnavigation](../../.gitbook/assets/1%20%2811%29.png)
+![Group subnavigation](<../../.gitbook/assets/1 (1).png>)
 
 ## Basic Info
 
 Basic information for the group will _only_ exist from the Clearbit and other queries that were performed when the group was created _if_ this is a public group and not a group associated with an account.
 
-![Basic Info](../../.gitbook/assets/2%20%2812%29.png)
+![Basic Info](<../../.gitbook/assets/2 (2).png>)
 
-1. **Core Metadata** should exist and is automatically created.
+1\. **Core Metadata** should exist and is automatically created.
 
-2. **Legal Name** will exist _if Clearbit data was found_. If not, this should be disabled as account-related groups do not have a legal name.
+2\. **Legal Name** will exist _if Clearbit data was found_. If not, this should be disabled as account-related groups do not have a legal name.
 
-3. **Names** – this is an array for additional names. Additional names can be added to manually or they can be removed _for public groups_. Account-related groups are allowed _only a single name_.
+3\. **Names** – this is an array for additional names. Additional names can be added to manually or they can be removed _for public groups_. Account-related groups are allowed _only a single name_.
 
-4. **Social Addresses** – these will exist if they were found in Clearbit data. If not, they can be manually added or removed _for public groups_. Account-related groups _do not have social addresses_ and therefore this should be disable for them.
+4\. **Social Addresses** – these will exist if they were found in Clearbit data. If not, they can be manually added or removed _for public groups_. Account-related groups _do not have social addresses_ and therefore this should be disable for them.
 
-5. **Organizational Hierarchy** – How this is handled is different for public and account-related groups.
+5\. **Organizational Hierarchy** – How this is handled is different for public and account-related groups.
 
 * For public groups, a parent group can be selected _from existing public groups or organizations_.
 * For account-related groups, a parent group can be selected _from existing account-related groups_.
@@ -47,35 +47,35 @@ Any child of _this_ organization will be listed in the subsidiary list.
 
 _This only applies to account-related groups_. This should be disabled for public groups.
 
-![Group Character](../../.gitbook/assets/3%20%2811%29.png)
+![Group Character](../../.gitbook/assets/3.png)
 
-1. **Group Character settings** – these are options settings wherein the user selects a number from 1 to 10 for each of the four characterizations. Selections from 1-5 will create a _formal_ setting and 6-10 will create an _informal_ setting. There are images associated with each of the formal and informal settings for each of the four characterizations.
+1\. **Group Character settings** – these are options settings wherein the user selects a number from 1 to 10 for each of the four characterizations. Selections from 1-5 will create a _formal_ setting and 6-10 will create an _informal_ setting. There are images associated with each of the formal and informal settings for each of the four characterizations.
 
-2. **Organizational Character Index** – this is an optional field to be filled out for the _the account_. If it was filled out at the account level, that information will show up here.
+2\. **Organizational Character Index** – this is an optional field to be filled out for the _the account_. If it was filled out at the account level, that information will show up here.
 
 ## Social Addresses
 
 _Some_ information about social addresses will be returned by Clearbit and others _if this is a public group_. The rest can be added manually _for public groups only_. If this is an account-related group _this should be disabled._
 
-![Social Information](../../.gitbook/assets/4%20%2810%29.png)
+![Social Information](<../../.gitbook/assets/4 (3).png>)
 
-1. **Email Addresses** – only addresses _from the same domain as the organization, or those in the domains list_ can be added to the Email Address array. They can be removed at will.
+1\. **Email Addresses** – only addresses _from the same domain as the organization, or those in the domains list_ can be added to the Email Address array. They can be removed at will.
 
-2. **Telephone Numbers** – can be manually added or removed at will.
+2\. **Telephone Numbers** – can be manually added or removed at will.
 
-3. **Domains** – can be added and removed at will.
+3\. **Domains** – can be added and removed at will.
 
 ## Postal Addresses
 
 The primary postal address was already created during the sign-up process _if this is a public group_. The rest can be added manually _for public groups only_. If this is an account-related group _this should be disabled._
 
-![Postal addresses](../../.gitbook/assets/5%20%286%29.png)
+![Postal addresses](<../../.gitbook/assets/5 (6).png>)
 
 When filled out, they must be filled out in the order of _country_, _state_, _city_, and then the rest of the information. This is because _country_, _state_, and _city_ are all pop-ups, one deriving its list from the other.
 
-1. **Country** **API** – [https://short.grcschema.org/API-Country List](https://short.grcschema.org/API-Country%20List)
+1\. **Country** **API** – [https://short.grcschema.org/API-Country List](https://short.grcschema.org/API-Country%20List)
 
-2. **State API** -
+2\. **State API** -
 
 [https://short.grcschema.org/API-State List](https://short.grcschema.org/API-State%20List3)
 
@@ -85,5 +85,4 @@ When filled out, they must be filled out in the order of _country_, _state_, _ci
 
 This is a listing of members. Members are added/managed through the Staff layout. Members can be navigated to by clicking on their name.
 
-![Members](../../.gitbook/assets/6%20%287%29.png)
-
+![Members](<../../.gitbook/assets/6 (1).png>)

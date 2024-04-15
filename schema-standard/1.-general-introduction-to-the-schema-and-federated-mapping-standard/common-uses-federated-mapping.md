@@ -126,6 +126,12 @@ NIST has developed a SWID Tag validation methodology and schema that can be used
 
 [https://theucf.info/schemas-SWID](https://theucf.info/schemas-SWID)
 
+### Standard Generalized Markup Language
+
+The Standard Generalized Markup Language (SGML; ISO 8879:1986) is a standard for defining generalized markup languages for documents. ISO 8879 Annex A.1 states that generalized markup is "based on two postulates": Declarative: Markup should describe a document's structure and other attributes rather than specify the processing that needs to be performed, because it is less likely to conflict with future developments. Rigorous: In order to allow markup to take advantage of the techniques available for processing, markup should rigorously define objects like programs and databases.DocBook SGML and LinuxDoc are examples which used SGML tools.
+
+[https://theucf.info/schemas-SGML](https://theucf.info/schemas-SGML)
+
 ### Structured Threat Information Expression (STIX™)
 
 Structured Threat Information Expression (STIX™) is a language and serialization format used to exchange cyber threat intelligence (CTI)[\[24\]](broken-reference).
